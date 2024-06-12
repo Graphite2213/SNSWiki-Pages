@@ -1,4 +1,4 @@
 from os import walk
 
-filenames = next(walk("./"), (None, None, []))[2]  # [] if no file
+filenames = next(walk("./en/"), (None, None, []))[2]  # [] if no file
 print(filenames)
