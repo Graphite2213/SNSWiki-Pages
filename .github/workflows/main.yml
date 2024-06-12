@@ -8,10 +8,10 @@ jobs:
 
     steps:
       - name: Checkout repository content
-        uses: actions/checkout@v2 # Checkout the repository content to github runner.
+        uses: actions/checkout@v4 # Checkout the repository content to github runner.
 
       - name: Setup Python Version
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v5
         with:
           python-version: 3.8 # Install the python version needed
 
@@ -20,3 +20,12 @@ jobs:
 
       - name: Execute Python script # Run the run.py to get the latest data
         run: python main.py
+
+      - name: Stage edited files
+        run: git stage .
+
+      - name: Commit edited files
+        run: git commit -M "Auto-update of site metadata; Performed by ${{github.actor}}"
+
+      - name: Push back files
+        run: git push origin
