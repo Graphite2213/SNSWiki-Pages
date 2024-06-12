@@ -1,4 +1,6 @@
-from os import walk
+import glob
+filenamesEn = glob.glob("./en/*.html")
+filenamesSr = glob.glob("./rs/*.html")
 
-filenames = next(walk("./en/"), (None, None, []))[2]  # [] if no file
-print(filenames)
+print(filenamesEn)
+print(filenamesSr)
