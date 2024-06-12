@@ -25,7 +25,7 @@ jobs:
         run: git stage .
 
       - name: Commit edited files
-        run: git commit -M "Auto-update of site metadata; Performed by ${{github.actor}}"
+        run: git commit -m "Auto-update of site metadata; Performed by ${{github.actor}}"
 
       - name: Push back files
         run: git push origin
