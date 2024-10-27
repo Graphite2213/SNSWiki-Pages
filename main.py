@@ -1,8 +1,8 @@
 import glob
 import json
 
-filenamesEn = glob.glob("./en/*.html")
-filenamesSr = glob.glob("./rs/*.html")
+filenamesEn = glob.glob(".\\en\\*\\")
+filenamesSr = glob.glob(".\\rs\\*\\")
 
 with open("./en/en-meta.json", 'r') as file:
     metaEn = json.load(file)
@@ -14,11 +14,11 @@ allFilesEn = []
 allFilesRs = []
 
 for x in filenamesEn:
-    allFilesEn.append(x.split("/")[-1]);
+    allFilesEn.append(x.split("\\")[-2]);
 
 
 for x in filenamesSr:
-    allFilesRs.append(x.split("/")[-1]);
+    allFilesRs.append(x.split("/")[-2]);
 
 metaEn["pages"] = allFilesEn;
 metaRs["pages"] = allFilesRs;
