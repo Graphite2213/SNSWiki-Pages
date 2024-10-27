@@ -2,7 +2,8 @@
 
 ## Kako sajt funkcioniše / Kako doprineti
 
-Sam <a href="https://sns.graphite.in.rs/">sajt SNSWiki</a> (koji se ne nalazi na ovom repozitorijumu) vuče podatke (stranice) odavde. Da bi stvorili stranicu morate da napravite `.html` fajl koji odgovara stranici koju pokušavate da napravite. Ime fajla mora koristiti ošišanu latinicu.
+Sam <a href="https://sns.graphite.in.rs/">sajt SNSWiki</a> (koji se ne nalazi na ovom repozitorijumu) vuče podatke (stranice) odavde. Da bi stvorili stranicu morate da napravite folder koji odgovara stranici koju pokušavate da napravite, ime foldera je ujedno i naslov stranice. Ime fajla ne sme sadržati specijalne karaktere.
+Taj folder treba da sadrži `.html` fajl sa istim imenom i `images` folder koji sadrži sve slike koje ta stranica koristi.
 
 ## Generalna pravila uređivanja
 
@@ -11,11 +12,10 @@ Sam <a href="https://sns.graphite.in.rs/">sajt SNSWiki</a> (koji se ne nalazi na
 - Ostanite civilizovani, botovanje i vandalizam nisu dozvoljeni.
 - Ton svih stranica sme da bude malo sarkastičan ali mora ostati objektivan.
 - Svaka velika tvrdnja na stranici mora biti podržana sa odgovarajućim <a href="#izvori">izvorom.</a>
-- U <a href="#linkovi">linkovima</a> i samim imenima stranica/fajlova <b>obavezno je koristiti ošišanu latinicu.</b>
 
 ## `rs-meta.json` fajl
 
-Ovaj fajl sadrži generalne metapodatke za srpsku stranu sajta. Osim stranica (`pages` array koji ne treba dirati manuelno) koje sam repozitorijum prati i dodaje, takođe postoji i `featured` koji sadrži stranice koje se nalaze u "sidebar"-u sajta.
+Ovaj fajl sadrži generalne metapodatke za srpsku stranu sajta. Osim stranica (`pages` niz koji **ne treba dirati manuelno**) koje sam repozitorijum prati i dodaje, takođe postoji i `featured` koji sadrži stranice koje se nalaze u "sidebar"-u sajta.
 
 ## Formatiranje
 Jezik koji koristi ova wikija je, kao i sve ostalo, napravljena "custom" od strane mene. Ona je zapravo samo našminkani HTML i koristi tagove za sve elemente i formatiranje. Svi custom tagovi imaju prefiks `w`.
@@ -64,10 +64,24 @@ Izvor (po mogućnosti) treba da sadrži:
 - URL do materijala
 - Naglasiti ako je materijal preuzet iz arhiva (npr. Internet Archive/Wayback Machine)
 
-### Metapodaci
+Primer:
+`
 
-Svaka stranica ima `<w-meta>` tag koji definiše neke osnovne metapodatke kao što su naslov stranice u neošišanoj latinici i datum poslednjih izmena.
+### Infoboksovi
 
-#### Primer:
+Infoboks (en. infobox) je element koji sadrzi neke generalne informacije o stranici na kojoj se nalazi. Evo primera sa wikipedije:
 
-`<w-meta title="Primer Stranica" last-edited="06.06.2024"></w-meta>`
+![Primer](../images/oreo-primer.png)
+
+Na mom sajtu se infoboksovi dodaju u sledećoj formi:
+```
+<w-infobox type="person" title="Aleksandar Šapić">
+<wi-image>sap.jpg|Aleksandar "Gangula" Šapić</wi-image>
+                
+<wi-header>Lične Informacije</wi-header>
+<wi-row>Pozicija|Gradonačelnik</wi-row>
+<wi-row>Poslovi|Vaterpolista, Političar</wi-row>
+<wi-row>Potpis|<wic-image>signature.png</wic-image></wi-row>
+</w-infobox>
+```
+

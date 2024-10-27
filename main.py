@@ -14,12 +14,10 @@ allFilesEn = []
 allFilesRs = []
 
 for x in filenamesEn:
-    print(x.split("\\")[-2]);
     allFilesEn.append(x.split("\\")[-2]);
 
 
 for x in filenamesSr:
-    print(x.split("\\")[-2]);
     allFilesRs.append(x.split("\\")[-2]);
 
 metaEn["pages"] = allFilesEn;
