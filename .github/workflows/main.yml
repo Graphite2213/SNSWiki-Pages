@@ -28,7 +28,7 @@ jobs:
         run: |
           git config --global user.name 'Graphite2213'
           git config --global user.email '88732099+Graphite2213@users.noreply.github.com'
-          git commit -m "Auto-update of site metadata; Performed by ${{github.actor}}"
+          git commit --allow-empty -m "Auto-update of site metadata; Performed by ${{github.actor}}"
 
       - name: Push back files
         run: git push origin
