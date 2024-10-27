@@ -4,10 +4,10 @@ import json
 filenamesEn = glob.glob(".\\en\\*\\")
 filenamesSr = glob.glob(".\\rs\\*\\")
 
-with open("./en/en-meta.json", 'r') as file:
+with open("./en/en-meta.json", 'r+') as file:
     metaEn = json.load(file)
 
-with open("./rs/rs-meta.json", 'r') as file:
+with open("./rs/rs-meta.json", 'r+') as file:
     metaRs = json.load(file)
 
 allFilesEn = []
