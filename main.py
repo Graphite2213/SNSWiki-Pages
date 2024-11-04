@@ -23,7 +23,7 @@ for x in filenamesSr:
 metaEn["pages"] = allFilesEn;
 metaRs["pages"] = allFilesRs;
 
-allFiles = glob.glob("*")
+allFiles = glob.glob("en/*")
 
 for x in allFiles:
     print(x)
