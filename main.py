@@ -14,19 +14,16 @@ allFilesEn = []
 allFilesRs = []
 
 for x in filenamesEn:
-    allFilesEn.append(x.split("\\")[-2]);
+    print(x)
 
+for x in filenamesEn:
+    allFilesEn.append(x.split("\\")[-2]);
 
 for x in filenamesSr:
     allFilesRs.append(x.split("\\")[-2]);
 
 metaEn["pages"] = allFilesEn;
 metaRs["pages"] = allFilesRs;
-
-allFiles = glob.glob("en/*")
-
-for x in filenamesEn:
-    print(x)
 
 with open("./en/en-meta.json", 'w') as file:
     json.dump(metaEn, file, indent=4)
