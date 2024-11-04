@@ -23,6 +23,8 @@ for x in filenamesSr:
 metaEn["pages"] = allFilesEn;
 metaRs["pages"] = allFilesRs;
 
+print(metaEn)
+
 with open("./en/en-meta.json", 'w') as file:
     json.dump(metaEn, file, indent=4)
 
