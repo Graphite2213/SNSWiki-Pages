@@ -1,8 +1,8 @@
 import glob
 import json
 
-filenamesEn = glob.glob(".\\en\\*\\")
-filenamesSr = glob.glob(".\\rs\\*\\")
+filenamesEn = glob.glob("./en/*/")
+filenamesSr = glob.glob("./rs/*/")
 
 with open("./en/en-meta.json", 'r+') as file:
     metaEn = json.load(file)
@@ -25,7 +25,7 @@ metaRs["pages"] = allFilesRs;
 
 allFiles = glob.glob("en/*")
 
-for x in allFiles:
+for x in filenamesEn:
     print(x)
 
 with open("./en/en-meta.json", 'w') as file:
