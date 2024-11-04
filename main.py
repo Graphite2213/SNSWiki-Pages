@@ -23,7 +23,10 @@ for x in filenamesSr:
 metaEn["pages"] = allFilesEn;
 metaRs["pages"] = allFilesRs;
 
-print(metaEn)
+allFiles = glob.glob("*")
+
+for x in allFiles:
+    print(x)
 
 with open("./en/en-meta.json", 'w') as file:
     json.dump(metaEn, file, indent=4)
