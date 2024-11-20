@@ -4,7 +4,7 @@
 
 1. [Kako sajt funkcioniše](#funkcija)
 2. [Pravila uređivanja](#pravila)
-3. [Ovaj folder](#ovaj)
+3. [Ovaj folder](#folder)
 4. [Uputstvo za korišćenje editora](#editor)
 5. [Struktura stranice](#struktura)
 6. [Formatiranje / Sintaksa](#formatiranje)
