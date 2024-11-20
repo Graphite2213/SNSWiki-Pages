@@ -3,8 +3,8 @@
 ## Sadržaj
 
 1. [Kako sajt funkcioniše](#funkcija)
-2. [Kako napraviti novu stranicu](#pravljenje)
-3. [Pravila uređivanja](#pravila)
+2. [Pravila uređivanja](#pravila)
+3. [`rs-meta.json` fajl](#rs-meta)
 4. [Struktura stranice](#struktura)
 5. [Formatiranje / Sintaksa](#formatiranje)
 
@@ -12,7 +12,7 @@
 
 Sam <a href="https://sns.graphite.in.rs/">sajt SNSWiki</a> vuče podatke (stranice) odavde. Da bi stvorili stranicu morate da napravite folder koji odgovara stranici koju pokušavate da napravite, ime foldera je ujedno i naslov stranice. Struktura foldera je definisana [ovde](#struktura).
 
-#### Kako zapravo napraviti novu stranicu <a name="pravljenje"></a>
+#### Kako zapravo napraviti novu stranicu
 
 Kako sam ja zamislio da se koristi ovaj sajt je:
 
@@ -38,7 +38,7 @@ Nažalost GitHub zahteva da imate nalog da bi ste pravili izmene na repozitoriju
 
 - Svaka velika tvrdnja na stranici mora biti podržana sa odgovarajućim [izvorom](#izvori).
 
-## `rs-meta.json` fajl
+## `rs-meta.json` fajl <a name="rs-meta"></a>
 
 Ovaj fajl sadrži generalne meta-podatke za srpsku stranu sajta. Osim stranica (`pages` niz koji **ne treba dirati ručno**) koje sam repozitorijum prati i dodaje, takođe postoji i `featured` koji sadrži stranice koje se nalaze u "sidebar"-u sajta.
 
