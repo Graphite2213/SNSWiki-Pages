@@ -11,7 +11,7 @@
 
 ## Kako sajt funkcioniše / Kako doprineti <a name="funkcija"></a>
 
-Sam <a href="https://sns.graphite.in.rs/">sajt SNSWiki</a> vuče podatke (stranice) odavde. Da bi stvorili stranicu morate da napravite folder koji odgovara stranici koju pokušavate da napravite, ime foldera je ujedno i naslov stranice. Struktura foldera je definisana [ovde](#struktura).
+Sajt <a href="https://sns.graphite.in.rs/">SNSWiki</a> vuče podatke (stranice) odavde. Da bi stvorili stranicu morate da napravite folder koji odgovara stranici koju pokušavate da napravite, ime foldera je ujedno i naslov stranice. Struktura tog foldera je definisana [ovde](#struktura).
 
 #### Kako zapravo napraviti novu stranicu
 
@@ -26,6 +26,38 @@ Ali sam shvatio da većina ljudi koja verovatno želi da uredi nešto nije upozn
 
 Nažalost GitHub zahteva da imate nalog da bi ste pravili izmene na repozitorijumima. To znači da morate napraviti GitHub nalog da bi doprineli SNSWiki.
 
+##### 2. Kreacija nove stranice (u praksi)
+
+Prvo trebate da odete u `rs` folder, onda će vam se prikazati dugme za dodavanje fajla.
+
+![Prvi korak](../images/gh_step1.png)
+
+Ako ovde kliknete na "Create new file" ili "Upload files", a niste ranije pravili stranice, izaćiće vam sledeća poruka:
+
+![Drugi korak](../images/gh_step2.png)
+
+Ovo u osnovi znači da morate da napravite kopiju SNSWikije na svom nalogu, odavde trebate samo da kliknete zeleno dugme i prećićete na sledeći korak,
+
+![Treci korak](../images/gh_step3.png)
+
+Ovde unosite ime fajla i njegov sadržaj. U gornjem textbox-u morate da unesete **naziv foldera**, i onda da upišete naziv fajla. Na primer, za članak s imenom "Primer", u gornji textbox bi ste napisali `Primer/primer.html`. Tako se kreira i folder i fajl za stranicu koju pravite. Ja sam to već uradio u ovoj slici.
+
+U donjem, velikom textbox-u, se unosi sadržaj `.html` fajla iliti sadržaj stranice koju stvarate.
+
+Pritiskanjem zelenog dugmeta "commit changes" čuvate izmene i prelazite na četvrti korak.
+
+![Cetvrti korak](../images/gh_step4.png)
+
+Ovde će vam izaći poređenje između trenutnog stanja SNSWikije i vaših izmena. Možete samo kliknuti zeleno dugme i nastaviti dalje.
+
+![Peti korak](../images/gh_step5.png)
+
+Ovo je poslednji korak. Ovde unosite poruku koju imate za izmene. Klikom na zeleno dugme vaše izmene se šalju na pregled.
+
+Pošto jednom prođete ove korake moćićete da menjate/stvarate bilo koju stranicu bez da prolazite kroz sve ovo ponovo.
+
+
+
 
 ## Generalna pravila uređivanja <a name="pravila"></a>
 
@@ -39,7 +71,7 @@ Nažalost GitHub zahteva da imate nalog da bi ste pravili izmene na repozitoriju
 
 - Svaka velika tvrdnja na stranici mora biti podržana sa odgovarajućim [izvorom](#izvori).
 
-## Ovaj folder <a name="folder"></a>
+## Ovaj (rs) folder <a name="folder"></a>
 
 ### `rs-meta.json` fajl 
 
@@ -51,7 +83,7 @@ Ovaj fajl predstavlja tekst koji je učitan kad na wikiji pratite link koji nema
 
 ## Struktura jedne stranice <a name="struktura"></a>
 
-Folder stranice treba da sadrži `.html` fajl sa istim imenom (ali malim slovima) i može sadržati `Images` folder koji sadrži sve slike koje ta stranica koristi.
+Folder stranice treba da sadrži `.html` fajl sa istim imenom (ali malim slovima), koji je sav tekst i elementi koji se nalaze na stranici. Folder može imati i `Images` folder koji sadrži sve slike koje ta stranica koristi.
 
 Taj folder takođe može sadržati `.json` fajl sa istim imenom (ali malim slovima) koji u sebi sadrži metapodatke za tu stranicu. Zasad su ti metapodaci u sledećem formatu:
 
