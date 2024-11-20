@@ -4,7 +4,7 @@
 
 1. [Kako sajt funkcioniše](#funkcija)
 2. [Pravila uređivanja](#pravila)
-3. [`rs-meta.json` fajl](#rs-meta)
+3. [Ovaj folder](#ovaj)
 4. [Uputstvo za korišćenje editora](#editor)
 5. [Struktura stranice](#struktura)
 6. [Formatiranje / Sintaksa](#formatiranje)
@@ -39,9 +39,15 @@ Nažalost GitHub zahteva da imate nalog da bi ste pravili izmene na repozitoriju
 
 - Svaka velika tvrdnja na stranici mora biti podržana sa odgovarajućim [izvorom](#izvori).
 
-## `rs-meta.json` fajl <a name="rs-meta"></a>
+## Ovaj folder <a name="folder"></a>
+
+### `rs-meta.json` fajl 
 
 Ovaj fajl sadrži generalne meta-podatke za srpsku stranu sajta. Osim stranica (`pages` niz koji **ne treba dirati ručno**) koje sam repozitorijum prati i dodaje, takođe postoji i `featured` koji sadrži stranice koje se nalaze u "sidebar"-u sajta.
+
+### `placeholder.html` fajl
+
+Ovaj fajl predstavlja tekst koji je učitan kad na wikiji pratite link koji nema stranicu još uvek. Takvi linkovi su na sajtu crveni.
 
 ## Struktura jedne stranice <a name="struktura"></a>
 
