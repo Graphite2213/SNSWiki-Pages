@@ -5,8 +5,9 @@
 1. [Kako sajt funkcioniše](#funkcija)
 2. [Pravila uređivanja](#pravila)
 3. [`rs-meta.json` fajl](#rs-meta)
-4. [Struktura stranice](#struktura)
-5. [Formatiranje / Sintaksa](#formatiranje)
+4. [Uputstvo za korišćenje editora](#editor)
+5. [Struktura stranice](#struktura)
+6. [Formatiranje / Sintaksa](#formatiranje)
 
 ## Kako sajt funkcioniše / Kako doprineti <a name="funkcija"></a>
 
