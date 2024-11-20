@@ -47,23 +47,33 @@ Ovaj fajl sadrži generalne meta-podatke za srpsku stranu sajta. Osim stranica (
 
 Folder stranice treba da sadrži `.html` fajl sa istim imenom (ali malim slovima) i može sadržati `Images` folder koji sadrži sve slike koje ta stranica koristi.
 
-Taj folder takođe može sadržati `link.cfg` fajl koji u sebi sadrži samo naziv te stranice na drugom jeziku. Ovo povezuje srpsku i englesku stranu sajta.
+Taj folder takođe može sadržati `.json` fajl sa istim imenom (ali malim slovima) koji u sebi sadrži metapodatke za tu stranicu. Zasad su ti metapodaci u sledećem formatu:
 
-Sve u ovoj strukturi je **case-sensitive**, `Images` počinje velikim slovom, `.html` fajl je uvek sve malim slovima i `link.cfg` je takođe malim slovima. Samo ime foldera je naslov stranice koji se prikazuje na sajtu pa velika i mala slova trebaju da budu adekvatna.
+```
+{
+    link: "",
+    keywords: []
+}
+```
+
+Ovde je `link` ime te stranice na drugom jeziku (ako ste na srpskoj wikiji, onda je to ime stranice na engleskoj strani sajta). To povezuje dve strane wikije.
+`keywords` niz sadrži ključne reči za SEO, u osnovi, to su reči po kojima Google i ostali pretraživači pamte tu stranicu.
+
+Sve u ovoj strukturi je **case-sensitive**, `Images` počinje velikim slovom, `.json` i `.html` fajlovi su uvek sve malim slovima. Samo ime foldera je naslov stranice koji se prikazuje na sajtu pa velika i mala slova trebaju da budu adekvatna.
 
 #### Primer strukture jedne stranice:
 
 ```
 📂 Covid Protesti 2020
-┣ 📄 covid protesti 2020.html
 ┣ 📂 Images
 ┃  ┣ 🖼️ Protest_ispred_skupstine.png
 ┃  ┣ 🖼️ Policija_bije_gradjane.png
 ┃  ┗ 🖼️ Protest_2.png
-┗ 📄 link.cfg
+┣ 📄 covid protesti 2020.html
+┗ 📄 covid protesti 2020.json
 ```
 
-Ovde bi `covid protesti 2020.html` bila stranica koja se pojavljuje na sajtu pod imenom "Covid Protesti 2020", a u `link.cfg` bi pisalo ime te stranice na engleskoj strani wiki.
+Ovde bi `covid protesti 2020.html` bila stranica koja se pojavljuje na sajtu pod imenom "Covid Protesti 2020", a u `link` polju u `.json` fajlu bi pisalo ime te stranice na engleskoj strani wikije.
 
 U suštini, jedino što je potrebno da sajt funkcioniše je sam folder i `.html` fajl unutar njega.
 
@@ -103,7 +113,7 @@ Naslovi se označavaju sa tagovima `<w-h1>` do `<w-h3>`, gde je 1 najveći a 3 n
 
 ### Slike
 
-Slike se u stranicu ubacuju kroz `<w-image>` tag. Koristi se tako što u tag ubacite URL slike koju želite da prikažete. Opciono možete dodati tekst ispod slike tako što ćete ga ubaciti pored teksta, odvojeno s karakterom `|`.
+Slike se u stranicu ubacuju kroz `<w-img>` tag. Koristi se tako što u tag ubacite URL slike koju želite da prikažete. Opciono možete dodati tekst ispod slike tako što ćete ga ubaciti pored teksta, odvojeno s karakterom `|`.
 
 U slučaju da se slika koju želite da iskoristite nalazi u `Images` folderu vaše stranice, možete samo navesti ime fajla te slike umesto URL-a.
 
@@ -111,15 +121,15 @@ U slučaju da se slika koju želite da iskoristite nalazi u `Images` folderu va�
 
 Bez teksta:
 
-`<w-image>https://example.com/</w-image>`
+`<w-img>https://example.com/</w-img>`
 
 Sa tekstom:
 
-`<w-image>https://example.com/|Ovo je neka slika</w-image>`
+`<w-img>https://example.com/|Ovo je neka slika</w-img>`
 
 Slika u `Images` folderu:
 
-`<w-image>Protest2.png|Slika protesta</w-image>`
+`<w-img>Protest2.png|Slika protesta</w-img>`
 
 ### Linkovi
 
@@ -154,7 +164,7 @@ Izvor (po mogućnosti) treba da sadrži:
 
 #### Primer:
 
-`<w-ref name="izbori 2012"><w-a>https://www.vreme.com/projekat/izbori-2012-rezultati-i-postizborna-trgovina/|"Izbori 2012: Rezultati i postizborna trgovina"</w-a>. <i>Vreme</i>. 10. Maj 2012. Arhivirano 30. Juna 2022.</w-ref>.`
+`<w-ref name="izbori 2012"><w-a>https://www.vreme.com/projekat/izbori-2012-rezultati-i-postizborna-trgovina/|"Izbori 2012: Rezultati i postizborna trgovina"</w-a>. <i>Vreme</i>. 10. Maj 2012. Arhivirano 30. Juna 2022.</w-ref>`
 
 Ako bi hteli opet da stavimo isti ovaj izvor sa istim brojem u jednom članku, samo bi napisali:
 
@@ -162,11 +172,15 @@ Ako bi hteli opet da stavimo isti ovaj izvor sa istim brojem u jednom članku, s
 
 `name` atribut **NIJE** obavezan, samo se koristi za ponovno korišćenje istog izvora.
 
-Na kraju stranice stavljamo 
+Formatiranje iznad bi imalo ovakve rezultate:
 
-`<w-reflist></w-reflist>`
+![Referenca Primer 1](../images/refEx.png)
 
-za listu svih izvora navedenih u tekstu.
+Na kraju stranice stavljamo `<w-reflist></w-reflist>` za listu svih izvora navedenih u tekstu, što izgleda ovako:
+
+![Referenca Primer 2](../images/refEx2.png)
+
+Da bi promenili naslov "Izvori" možemo staviti atribut "title" da bude novi naslov, na primer `<w-reflist title="Reference"></w-reflist>`
 
 ### Anotacije
 
@@ -186,11 +200,16 @@ Oni se ubacuju u stranicu sa `<w-annotation>` tagom i imaju tri vrste: `none`, `
 
 `<w-annotation type="warn">Ovaj članak nema dovoljno izvora. Treba dodati još.</w-annotation>`
 
-### Infoboksovi
+Formatiranje iznad bi napravilo ovakve anotacije: 
+
+![Anotacije Primer 1](../images/annotationEx1.png)
+![Anotacije Primer 2](../images/annotationEx2.png)
+
+### Infoboksevi
 
 Infoboks (en. infobox) je element koji sadrži neke generalne informacije o stranici na kojoj se nalazi. Evo primera sa wikipedije:
 
-![Primer](../images/oreo-primer.png)
+![Infobox Primer](../images/oreo-primer.png)
 
 Na mom sajtu se infoboksevi dodaju u sledećoj formi:
 
@@ -202,20 +221,92 @@ Na mom sajtu se infoboksevi dodaju u sledećoj formi:
 
 **Infoboks elementi**, koji imaju prefiks `wi-`, su sledeći:
 
-`<wi-section>` je naslov odeljka u infoboksu. Koristi se isto kao tagovi za naslov samo što nema više veličina. Default boja pozadine naslova je plava.
+- `<wi-section>` je naslov odeljka u infoboksu. Koristi se isto kao tagovi za naslov samo što nema više veličina. Default boja pozadine naslova je plava.
 
-`<wi-image>` je puna slika u infoboksu. Koristi se kao obični tag za [slike].
+- `<wi-image>` je puna slika u infoboksu. Koristi se kao obični tag za [slike](#slike).
 
-`<wi-row>` koji predstavlja obični red u infoboksu sa levom i desnom vrednošću. Leva i desna strana su odvojene karakterom `|`. I leva i desna strana mogu da sadrže linkove i liste. 
+- `<wi-row>` koji predstavlja obični red u infoboksu sa levom i desnom vrednošću. Leva i desna strana su odvojene karakterom `|`. I leva i desna strana mogu da sadrže linkove i liste. Nasuprot, da bi stavili SLIKU na levu ili desnu stranu morate koristiti element `<wic-image>`. Koristi se isto kao drugi elementi za slike ali ne može da ima tekst ispod.
 
-Nasuprot, da bi stavili SLIKU na levu ili desnu stranu morate koristiti element `<wic-image>`. Koristi se isto kao drugi elementi za slike ali ne može da ima tekst ispod.
+- `<wi-vs>` je element koji služi za prikazivanje dve suprotstavljene strane.
 
-`<wi-vs>` je element koji služi za prikazivanje dve suprotstavljene strane. Primer sa wikipedije je ispod.
+    On u sebi mora da sadrži bar 2 `<wvs-side>` dela, koji predstavljaju suprotstavljene strane, i te strane moraju sadržati svoje partije koje su predstavljene `<wvs-p>` elementom.
 
-On u sebi mora da sadrži bar 2 `<wvs-side>` dela, koji predstavljaju suprotstavljene strane, i te strane moraju sadržati svoje partije koje su predstavljene `<wvs-p>` elementom.
-
-Same partije mogu biti običan tekst, linkovi ili liste. Ako je partija lista u `<wvs-p>` element je moguće staviti dva opciona atributa, `list` i `collapsed`.
-
-`list` označava boldovani naslov liste, a `collapsed` označava da li je ta lista "kolapsovana" (sakrivena).
+    Same partije mogu biti običan tekst, linkovi ili liste. Ako je partija lista u `<wvs-p>` element je moguće staviti dva opciona atributa, `list` i `collapsed`, gde `list` označava boldovani naslov liste, a `collapsed` označava da li je ta lista "kolapsovana" (sakrivena).
 
 #### Primer:
+
+Ovo je jedan kompletan infoboks, tekst je na engleskom jer je preuzet sa Wikipedija stranice za proteste "Srbije Protiv Nasilja":
+
+```
+<w-infobox title="2023 Serbian protests">
+    <wi-image>protest.jpg|Demonstrators on 19 May 2023</wi-image>
+                    
+    <wi-header>Info</wi-header>
+    <wi-row>Date|8 May – 4 November 2023</wi-row>
+    <wi-row>Location|Serbia</wi-row>
+    <wi-row>Caused by|<ul>
+      <li>A school shooting and a mass murder on 3 and 4 May</li>
+    </ul></wi-row>
+    <wi-row>Goals|<ul>
+      <li>Resignation of Branko Ružić, Bratislav Gašić and Aleksandar Vulin</li>
+      <li>Resignations of the body members of the Regulatory Body for Electronic Media and Radio Television of Serbia</li>
+      <li>Withdrawal of the national broadcasting licences of RTV Pink and Happy TV</li>
+    </ul></wi-row>
+    <wi-row>Methods|Demonstrations • civil roadblocks • civil resistance</wi-row>
+    <wi-row>Concessions|<ul>
+      <li>Resignation of education minister Branko Ružić</li>
+    </ul></wi-row>
+    <wi-header>Parties</wi-header>
+    <wi-vs>
+        <wvs-side>
+            <wvs-p list="Anti-government protesters">
+                <ul>
+                    <li>Citizens</li>
+                    <li>Farmers (16-20 May)</li>
+                </ul>
+            </wvs-p>
+            <wvs-p list="Opposition parties" collapsed="true">
+                <ul>
+                    <li>Do not let Belgrade drown/Green–Left Front</li>
+                    <li>Democratic Party</li>
+                    <li>People's Party</li>
+                    <li>Party of Freedom and Justice</li>
+                    <li>Movement of Free Citizens</li>
+                    <li>Together</li>
+                </ul>
+            </wvs-p>
+        </wvs-side>
+        
+        <wvs-side>
+            <wvs-p list="Government of Serbia">
+                <ul>
+                    <li>Police</li>
+                </ul>
+            </wvs-p>
+            <wvs-p list="Government Parties">
+                <ul>
+                    <li>Serbian Progressive Party</li>
+                    <li>Socialist Party of Serbia</li>
+                </ul>
+            </wvs-p>
+        </wvs-side>
+    </wi-vs>
+    <wi-header>Lead Figures</wi-header>
+    <wi-vs>
+        <wvs-side>
+            <wvs-p><i>No centralised leadership</i></wvs-p>
+        </wvs-side>
+
+        <wvs-side>
+            <wvs-p>Aleksandar Vučić</wvs-p>
+            <wvs-p>Ana Brnabić</wvs-p>
+            <wvs-p>Aleksandar Vulin</wvs-p>
+            <wvs-p>Bratislav Gašić</wvs-p>
+        </wvs-side>
+    </wi-vs>
+</w-infobox>
+```
+
+Ovaj kod nam daje sledeći infobox:
+
+![Infobox Primer](../images/infoboxEx.png)
