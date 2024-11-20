@@ -101,7 +101,18 @@ Nažalost editor nema pristup slikama u `Images` folderu.
 
 Jezik koji koristi ovaj wiki je, kao i sve ostalo, napravljen namenski od strane mene. On je zapravo samo našminkani HTML i koristi tagove za sve elemente i formatiranje. Svi custom tagovi imaju prefiks `w`.
 
-Kao brzi 
+Za sve koji nisu upoznati sa HTML-om, evo ga jedan "crash course":
+
+- Skoro svaki tag koji se otvori mora i da se zatvori koristeći taj isti tag sa `/` karakterom: `<tag></tag>`
+- HTML ignoriše nove linije i više od jednog razmaka (Kad bi napisali "<pre>abcdef      ghi</pre>", samo bi se pojavilo "abcdef ghi").
+
+Neki osnovni tagovi su:
+
+- `<p></p>`, tekst unutar ovog taga se računa kao paragraf i odvojen je od ostatka teksta sa linijom. Sve celine u tekstu bi trebale da budu paragrafi.
+- `<b></b>`, je **bold**.
+- `<i></i>`, je *italic*.
+- `<br>` nema svoj zatvarajući tag i ubacuje novu liniju u tekst.
+- `<ul></ul> i <ol></ol>` su liste, one su malo komplikovanije i možete naći više informacija o njima [ovde](https://www.w3schools.com/html/html_lists.asp).
 
 ### Osnovno formatiranje
 
@@ -131,11 +142,11 @@ Bez teksta:
 
 Sa tekstom:
 
-`<w-img>https://example.com/|Ovo je neka slika</w-img>`
+`<w-img>Ovo je neka slika|https://example.com/</w-img>`
 
 Slika u `Images` folderu:
 
-`<w-img>Protest2.png|Slika protesta</w-img>`
+`<w-img>Ovo je neka slika|example.png</w-img>`
 
 ### Linkovi
 
@@ -145,10 +156,10 @@ Spoljašni linkovi koji vode ka wikipediji se vode kao unutrašnji, i nemaju iko
 
 #### Primeri:
 
-Spoljašnji: `<w-a>https://example.com/|primer spoljašnjeg linka</w-a>`
+Spoljašnji: `<w-a>primer spoljašnjeg linka|https://example.com/</w-a>`
 
   
-Unutrašnji: `<w-a>Aleksandar Vučić|primer unutrašnjeg linka</w-a>`
+Unutrašnji: `<w-a>primer unutrašnjeg linka|Aleksandar Vučić</w-a>`
 
 ### Izvori <a name="izvori"></a>
 
