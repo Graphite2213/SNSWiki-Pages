@@ -1,10 +1,18 @@
 # Dobrodošli na Srpski SNSWiki!
 
-## Kako sajt funkcioniše / Kako doprineti
+## Sadržaj
+
+1. [Kako sajt funkcioniše](#funkcija)
+2. [Kako napraviti novu stranicu](#pravljenje)
+3. [Pravila uređivanja](#pravila)
+4. [Struktura stranice](#struktura)
+5. [Formatiranje / Sintaksa](#formatiranje)
+
+## Kako sajt funkcioniše / Kako doprineti <a name="funkcija"></a>
 
 Sam <a href="https://sns.graphite.in.rs/">sajt SNSWiki</a> vuče podatke (stranice) odavde. Da bi stvorili stranicu morate da napravite folder koji odgovara stranici koju pokušavate da napravite, ime foldera je ujedno i naslov stranice. Struktura foldera je definisana [ovde](#struktura).
 
-#### Kako zapravo napraviti novu stranicu
+#### Kako zapravo napraviti novu stranicu <a name="pravljenje"></a>
 
 Kako sam ja zamislio da se koristi ovaj sajt je:
 
@@ -18,7 +26,7 @@ Ali sam shvatio da većina ljudi koja verovatno želi da uredi nešto nije upozn
 Nažalost GitHub zahteva da imate nalog da bi ste pravili izmene na repozitorijumima. To znači da morate napraviti GitHub nalog da bi doprineli SNSWiki.
 
 
-## Generalna pravila uređivanja
+## Generalna pravila uređivanja <a name="pravila"></a>
 
 - Držite se pouzdanih izvora, tabloide koji su privržni vlasti treba ređe koristiti.
 
