@@ -4,7 +4,7 @@
 
 1. [Kako sajt funkcioniše](#funkcija)
 2. [Pravila uređivanja](#pravila)
-3. [Ovaj folder](#folder)
+3. [Ovaj folder `/rs/`](#folder)
 4. [Uputstvo za korišćenje editora](#editor)
 5. [Struktura stranice](#struktura)
 6. [Formatiranje / Sintaksa](#formatiranje)
@@ -71,7 +71,7 @@ Pošto jednom prođete ove korake moćićete da menjate/stvarate bilo koju stran
 
 - Svaka velika tvrdnja na stranici mora biti podržana sa odgovarajućim [izvorom](#izvori).
 
-## Ovaj (rs) folder <a name="folder"></a>
+## Ovaj folder `/rs/` <a name="folder"></a>
 
 ### `rs-meta.json` fajl 
 
