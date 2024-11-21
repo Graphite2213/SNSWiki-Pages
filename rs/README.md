@@ -67,8 +67,6 @@ Pošto jednom prođete ove korake moćićete da menjate/stvarate bilo koju stran
 
 - Ostanite civilizovani, botovanje i vandalizam nisu dozvoljeni.
 
-- Ton svih stranica sme da bude malo sarkastičan ali mora ostati objektivan, nalik Rational wiki.
-
 - Svaka velika tvrdnja na stranici mora biti podržana sa odgovarajućim [izvorom](#izvori).
 
 ## Ovaj folder `/rs/` <a name="folder"></a>
@@ -140,10 +138,10 @@ Za sve koji nisu upoznati sa HTML-om, evo ga jedan "crash course":
 
 Neki osnovni tagovi su:
 
-- `<p></p>`, tekst unutar ovog taga se računa kao paragraf i odvojen je od ostatka teksta sa linijom. Sve celine u tekstu bi trebale da budu paragrafi.
+- `<p></p>`, tekst unutar ovog taga se računa kao paragraf i odvojen je od ostatka teksta sa praznim linijama. Sve celine u tekstu bi trebale da budu paragrafi.
 - `<b></b>`, je **bold**.
 - `<i></i>`, je *italic*.
-- `<br>` nema svoj zatvarajući tag i ubacuje novu liniju u tekst.
+- `<br>` nema svoj zatvarajući tag i predstavlja praynu liniju u tekstu.
 - `<ul></ul> i <ol></ol>` su liste, one su malo komplikovanije i možete naći više informacija o njima [ovde](https://www.w3schools.com/html/html_lists.asp).
 
 ### Osnovno formatiranje
