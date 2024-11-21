@@ -58,8 +58,9 @@ Ovo je poslednji korak. Ovde unosite poruku koju imate za izmene. Klikom na zele
 
 Pošto jednom prođete ove korake moćićete da menjate/stvarate bilo koju stranicu bez da prolazite kroz sve ovo ponovo.
 
+#### Uređivanje već postojećih članaka
 
-
+Ukoliko fajl već postoji, kad ga locirate i otvorite u GitHub-u pojaviće se mala ikonica olovke. Kad nju kliknete moćićete da menjate taj fajl.
 
 ## Generalna pravila uređivanja <a name="pravila"></a>
 
