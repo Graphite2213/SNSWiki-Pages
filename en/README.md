@@ -1,91 +1,87 @@
-# Welcome to english SNSWiki!
+# Welcome to English SNSWiki!
 
+**⚠️ All examples with images in this guide are in Serbian. Sorry!**
 ## Contents
 
-1. [How this site works](#funkcija)
+1. [How to contribute](#funkcija)
 2. [Editing rules](#pravila)
-3. [This folder's contents](#folder)
+3. [This folder (`/en/`)](#folder)
 4. [Editor use guide](#editor)
 5. [Page folder structure](#struktura)
-6. [Formatting / Syntax](#formatiranje)
+6. [Formatting](#formatiranje)
 
-## How to contribute <a name="funkcija"></a>
+## How to contribute<a name="funkcija"></a>
 
-Site <a href="https://sns.graphite.in.rs/">SNSWiki</a> draws its data from this repository. To create a new page you have to create a folder with the same name as the page's title. The structure of that folder is defined [here](#struktura).
+The <a href="https://sns.graphite.in.rs/">SNSWiki</a> site holds its data (pages) in this repository. To create a page you need to make a folder [here](#folder), which has the same name as the page. The structure of that folder is defined [below](#struktura).
 
-#### Kako zapravo napraviti novu stranicu
+#### How to create a new page
 
-Kako sam ja zamislio da se koristi ovaj sajt je:
+I imagined the use of this page to go like this:
 
-- Napišete članak u [editoru](#editor), da bi mogli uživo da pratite šta radite
-- Kad završite ovde pravite novi fajl (na dugme "add file") i samo prebacite tekst iz wiki editora u GitHub editor.
+- Write an article in the [on-site editor](#editor).
+- Once you finish you just copy the test to the GitHub editor and publish changes.
 
-Ali sam shvatio da većina ljudi koja verovatno želi da uredi nešto nije upoznata sa GitHub interfejsom i ne zna kako se dodaju fajlovi, folderi i slično.
+But then i realized that most people likely don't have experience with GitHub's UI and such.
 
-##### 1. GitHub nalog
+##### 1. GitHub account
 
-Nažalost GitHub zahteva da imate nalog da bi ste pravili izmene na repozitorijumima. To znači da morate napraviti GitHub nalog da bi doprineli SNSWiki.
+Unfortunately you do need a GitHub account to make changes to repositories, and by extension SNSWiki.
 
-##### 2. Kreacija nove stranice (u praksi)
+##### 2. Creating a new page
 
-Prvo trebate da odete u `rs` folder, onda će vam se prikazati dugme za dodavanje fajla.
+First you need to go to the `/en/` folder (this one) and you will see an "add files" button.
 
 ![Prvi korak](../images/gh_step1.png)
 
-Ako ovde kliknete na "Create new file" ili "Upload files", a niste ranije pravili stranice, izaćiće vam sledeća poruka:
+If you press "Create new file" or "Upload files", and you haven't edited on SNSWiki earlier, a prompt will show up:
 
 ![Drugi korak](../images/gh_step2.png)
 
-Ovo u osnovi znači da morate da napravite kopiju SNSWikije na svom nalogu, odavde trebate samo da kliknete zeleno dugme i prećićete na sledeći korak,
+This just means that you will have to create a copy of the wiki on your own GitHub account, you can just click the green button and you will go on to the next step,
 
 ![Treci korak](../images/gh_step3.png)
 
-Ovde unosite ime fajla i njegov sadržaj. U gornjem textbox-u morate da unesete **naziv foldera**, i onda da upišete naziv fajla. Na primer, za članak s imenom "Primer", u gornji textbox bi ste napisali `Primer/primer.html`. Tako se kreira i folder i fajl za stranicu koju pravite. Ja sam to već uradio u ovoj slici.
+On this page you're filling out the file name, its path and its contents. In the upper, smaller, textbox, you should to put in the **name of the folder**, and then the name of the file. For example, if you're creating a page called "Example" you would type in `Example/example.html`.
 
-U donjem, velikom textbox-u, se unosi sadržaj `.html` fajla iliti sadržaj stranice koju stvarate.
+In the lower, bigger, textbook is for the article itself.
 
-Pritiskanjem zelenog dugmeta "commit changes" čuvate izmene i prelazite na četvrti korak.
+By clicking on the "commit changes" button you're saving all changes and moving on to the fourth step.
 
 ![Cetvrti korak](../images/gh_step4.png)
 
-Ovde će vam izaći poređenje između trenutnog stanja SNSWikije i vaših izmena. Možete samo kliknuti zeleno dugme i nastaviti dalje.
+Here you will get the comparation of the current state of that page and your changes (if the page didnt exist before it will just be empty).
 
 ![Peti korak](../images/gh_step5.png)
 
-Ovo je poslednji korak. Ovde unosite poruku koju imate za izmene. Klikom na zeleno dugme vaše izmene se šalju na pregled.
+This is the final step. Here you are leaving a message related to your changes.  When you click the green button your changes will be sent for review.
 
-Pošto jednom prođete ove korake moćićete da menjate/stvarate bilo koju stranicu bez da prolazite kroz sve ovo ponovo.
+Once you go through this process once you will be able to edit or create any page  without going through this entire process again.
 
+## Editing Rules<a name="pravila"></a>
 
+- Use reliable sources, referencing government-influenced tabloids should be avoided.
 
+- For discussing a specific tab use the "discussions" tab on GitHub, and for any other site-related suggestions use the "issues" tab.
 
-## Generalna pravila uređivanja <a name="pravila"></a>
+- Stay civilized, vandalism and botting aren't allowed.
 
-- Držite se pouzdanih izvora, tabloide koji su privržni vlasti treba ređe koristiti.
+- All large claims made need to be backed by a [source](#izvori).
 
-- Za diskusiju oko neke specifične stranice koristite "discussions" tab, a ako želite da predložite nešto u vezi samog sajta (formatiranje, layout) koristite "issues" tab.
+## This  folder (`/en/`)<a name="folder"></a>
 
-- Ostanite civilizovani, botovanje i vandalizam nisu dozvoljeni.
+### `en-meta.json` file 
 
-- Ton svih stranica sme da bude malo sarkastičan ali mora ostati objektivan, nalik Rational wiki.
+This file contains general metadata for the english side of the site. Aside the pages array, which shouldn't be manually modified, there is also the `featured` array which contains the articles featured in the sidebar of the site.
 
-- Svaka velika tvrdnja na stranici mora biti podržana sa odgovarajućim [izvorom](#izvori).
+### `placeholder.html` file
 
-## Ovaj (rs) folder <a name="folder"></a>
+This file is the article that's loaded when someone tries to go to a page that doesn't exist yet. Links that lead to non-existent pages are red.
 
-### `rs-meta.json` fajl 
+## Page folder structure <a name="struktura"></a>
 
-Ovaj fajl sadrži generalne meta-podatke za srpsku stranu sajta. Osim stranica (`pages` niz koji **ne treba dirati ručno**) koje sam repozitorijum prati i dodaje, takođe postoji i `featured` koji sadrži stranice koje se nalaze u "sidebar"-u sajta.
+The page folder should contain a `.html` file with the same name (but lowercase), which contains the article itself. The folder could also include an `Images` folder which contains all images used in the article.
 
-### `placeholder.html` fajl
-
-Ovaj fajl predstavlja tekst koji je učitan kad na wikiji pratite link koji nema stranicu još uvek. Takvi linkovi su na sajtu crveni.
-
-## Struktura jedne stranice <a name="struktura"></a>
-
-Folder stranice treba da sadrži `.html` fajl sa istim imenom (ali malim slovima), koji je sav tekst i elementi koji se nalaze na stranici. Folder može imati i `Images` folder koji sadrži sve slike koje ta stranica koristi.
-
-Taj folder takođe može sadržati `.json` fajl sa istim imenom (ali malim slovima) koji u sebi sadrži metapodatke za tu stranicu. Zasad su ti metapodaci u sledećem formatu:
+It could also contain a `.json` file with the same name as the folder (but lowercase), which contains all the metadata for that page. For now that metadata is in the following format:
 
 ```
 {
@@ -94,197 +90,199 @@ Taj folder takođe može sadržati `.json` fajl sa istim imenom (ali malim slovi
 }
 ```
 
-Ovde je `link` ime te stranice na drugom jeziku (ako ste na srpskoj wikiji, onda je to ime stranice na engleskoj strani sajta). To povezuje dve strane wikije.
-`keywords` niz sadrži ključne reči za SEO, u osnovi, to su reči po kojima Google i ostali pretraživači pamte tu stranicu.
+The `link` property is the name of the article in Serbian, this connects the two sides of the wiki.
+The `keywords` array contains the SEO keywords.
 
-Sve u ovoj strukturi je **case-sensitive**, `Images` počinje velikim slovom, `.json` i `.html` fajlovi su uvek sve malim slovima. Samo ime foldera je naslov stranice koji se prikazuje na sajtu pa velika i mala slova trebaju da budu adekvatna.
+Everything in this structure is **case-sensitive**, `Images` starts with an uppercase I, the `.json` and `.html` files are always lowercase. The name of the folder is the title of the page that shows up on the site, and as such the capitalization should be adequate.
 
-#### Primer strukture jedne stranice:
+#### Example of a page folder:
 
 ```
-📂 Covid Protesti 2020
+📂 2020 Covid Protests
 ┣ 📂 Images
 ┃  ┣ 🖼️ Protest_ispred_skupstine.png
 ┃  ┣ 🖼️ Policija_bije_gradjane.png
 ┃  ┗ 🖼️ Protest_2.png
-┣ 📄 covid protesti 2020.html
-┗ 📄 covid protesti 2020.json
+┣ 📄 2020 covid protests.html
+┗ 📄 2020 covid protests.json
 ```
 
-Ovde bi `covid protesti 2020.html` bila stranica koja se pojavljuje na sajtu pod imenom "Covid Protesti 2020", a u `link` polju u `.json` fajlu bi pisalo ime te stranice na engleskoj strani wikije.
+In this case `2020 covid protests.html` would be the article that would show up on the site under the title "2020 Covid Protests". The `link` field in the `.json` file would be the article name in serbian.
 
-U suštini, jedino što je potrebno da sajt funkcioniše je sam folder i `.html` fajl unutar njega.
+In essence, the only thing a page needs to function is the folder itself and the `.html` file.
+## Editor use guide<a name="editor"></a>
 
-## Uputstvo za korišćenje editora<a name="editor"></a>
+Because the files on this site are created and edited on GitHub, and GitHub doesn't have the capability to preview articles, the site includes a "on-site editor", on which you can edit and save your article drafts.
 
-Pošto se stranice na ovom sajtu kreiraju i uređuju ovde, na GitHub-u, a GitHub nema opciju za preview toga što ste napisali, na sajtu se nalazi "on-site editor" u kom možete kucati i čuvati vaše nedovršene članke.
+The editor has a few useful tools, and can do anything a regular text editor can (undo, redo, etc.).
 
-Editor ima par korisnih alatki, i sve opcije običnog text editora (undo, redo, itd.).
+It can save **at most ten drafts at a time** and each one needs to have a different name.
 
-On može da čuva **maksimalno deset "draft"-ova** i svaki mora imati **različito ime**. 
+**The "delete draft" button doesn't have a confirmation prompt, once you click the little garbage can, your draft is permanently deleted**
 
-**Dugme za brisanje drafta nema prompt da potvrdite brisanje, jednom kad kliknete malu kantu za smeće, draft je trajno obrisan.**
+The preview button will close the text editor and, well, preview the article you typed out.
 
-Preview dugme će zatvoriti text editor i pokazati vam kako bi vaša stranica izgledala da je uživo na sajtu.
+Unfortunately the editor cannot access any files in `Images` folder.
 
-Nažalost editor nema pristup slikama u `Images` folderu.
+## Formatting
 
-## Formatiranje
+The markup language this wiki uses is, like everything else, custom made by me. It is actually just fancy HTML and uses custom tags for elements and formatting. All custom tags include the prefix `w`.
 
-Jezik koji koristi ovaj wiki je, kao i sve ostalo, napravljen namenski od strane mene. On je zapravo samo našminkani HTML i koristi tagove za sve elemente i formatiranje. Svi custom tagovi imaju prefiks `w`.
+For everyone unfamiliar with HTML, here's a crash course:
 
-Za sve koji nisu upoznati sa HTML-om, evo ga jedan "crash course":
+- Almost all tags that open need to close, using that same tag with the `/` character: `<tag></tag>`
+- HTML ignores newlines and more than one space (If you were to type "abcdef      ghi", only "abdcef ghi" would show up)
 
-- Skoro svaki tag koji se otvori mora i da se zatvori koristeći taj isti tag sa `/` karakterom: `<tag></tag>`
-- HTML ignoriše nove linije i više od jednog razmaka (Kad bi napisali "<pre>abcdef      ghi</pre>", samo bi se pojavilo "abcdef ghi").
+Some basic tags are:
+- `<p></p>`, text inside these tags counts as a paragraph, and as such is spaced out away from the text surrounding it. All blocks of text should be paragraphs.
+- `<b></b>`, is **bold**.
+- `<i></i>`, is *italic*.
+- `<br>` doesn't have a closing tag and creates a new line.
+- `<ul></ul> and <ol></ol>` form lists, they're a bit more complicated though, you can learn more about them [here](https://www.w3schools.com/html/html_lists.asp).
 
-Neki osnovni tagovi su:
+### Basic formatting
 
-- `<p></p>`, tekst unutar ovog taga se računa kao paragraf i odvojen je od ostatka teksta sa linijom. Sve celine u tekstu bi trebale da budu paragrafi.
-- `<b></b>`, je **bold**.
-- `<i></i>`, je *italic*.
-- `<br>` nema svoj zatvarajući tag i ubacuje novu liniju u tekst.
-- `<ul></ul> i <ol></ol>` su liste, one su malo komplikovanije i možete naći više informacija o njima [ovde](https://www.w3schools.com/html/html_lists.asp).
+Basic formatting like *italic*, **bold** and such are done through vanilla HTML. A good reference for HTML is [W3Schools](https://www.w3schools.com/tags/).
 
-### Osnovno formatiranje
+You could use HTML for literally anything in articles, but that's a bit more advanced and isn't covered in this guide.
 
-Osnovno formatiranje kao što su *italic*, **bold** i slično se vrši kroz obični HTML. Dobra referenca za HTML je [W3Schools](https://www.w3schools.com/tags/).
+### Headings  
 
-Po potrebi moguće je koristiti HTML za bukvalno bilo šta na stranicama, ali to je malo naprednije i nije pokriveno ovim uputstvom.
+Headings are denoted with tags `<w-h1>` through `<w-h3>`, where 1 is the largest and 3 is the smallest heading. They're used by just inserting the heading text between the tags.
 
-### Naslovi  
+#### Example:
 
-Naslovi se označavaju sa tagovima `<w-h1>` do `<w-h3>`, gde je 1 najveći a 3 najmanji "header" tag. Koriste se tako što ubacujete tekst koji treba da bude naslov među tagove.
+`<w-h1>This is the largest heading</w-h1>`
 
-#### Primer:
+### Images
 
-`<w-h1>Ovo je najveći naslov</w-h1>`
+Images are inserted into articles by using the `<w-img>` tag. It's used by inserting the caption below the image and then, seperated with `|`, the URL to the image. The caption text is optional.
 
-### Slike
+In case the image you want to use is in the `Images` folder of your page, you can simply use the file name instead of the URL.
 
-Slike se u stranicu ubacuju kroz `<w-img>` tag. Koristi se tako što u tag ubacite URL slike koju želite da prikažete. Opciono možete dodati tekst ispod slike tako što ćete ga ubaciti pored teksta, odvojeno s karakterom `|`.
+#### Examples:
 
-U slučaju da se slika koju želite da iskoristite nalazi u `Images` folderu vaše stranice, možete samo navesti ime fajla te slike umesto URL-a.
-
-#### Primeri:
-
-Bez teksta:
+Without a caption:
 
 `<w-img>https://example.com/</w-img>`
 
-Sa tekstom:
+With a caption:
 
-`<w-img>Ovo je neka slika|https://example.com/</w-img>`
+`<w-img>This is some image|https://example.com/</w-img>`
 
-Slika u `Images` folderu:
+Image from the `Images` folder:
 
-`<w-img>Ovo je neka slika|example.png</w-img>`
+`<w-img>This is some image|example.png</w-img>`
 
-### Linkovi
+### Hyperlinks
 
-Linkovi se u stranice dodaju kroz `<w-a>` tag, on može da se koristi i za unutrašnje linkove (prema ostatku wikije) ili za spoljašnje linkove (koji vode ka drugim sajtovima). Tekst koji se pojavljuje umesto samog linka treba odvojiti s karakterom `|`.
+Hyperlinks are added to the article using the `<w-a>` tag, it can be used for both internal and external links. The text that shows up instead of the URL should be seperated with the `|` character.
 
-Spoljašni linkovi koji vode ka wikipediji se vode kao unutrašnji, i nemaju ikonicu koju spoljašnji linkovi nose.
+External links that lead to Wikipedia are counted as internal and don't have the icon that external links usually do.
 
-#### Primeri:
+#### Examples:
 
-Spoljašnji: `<w-a>primer spoljašnjeg linka|https://example.com/</w-a>`
+External: `<w-a>example of external link|https://example.com/</w-a>`
 
-  
-Unutrašnji: `<w-a>primer unutrašnjeg linka|Aleksandar Vučić</w-a>`
 
-### Izvori <a name="izvori"></a>
+Internal: `<w-a>example of internal link|Aleksandar Vučić</w-a>`
 
-Takozvani "inline" izvori se na ovoj wikiji dodaju sa tagom `<w-ref>`. Svaki izvor može imati ime, i tako se može iskoristiti opet. **Obavezno je dodati `<w-reflist>` tag na kraju stranice da bi se stvorio odvojen deo sa svim izvorima.**
-  
-Dobri izvori su: Knjige, novinski članci, informacije s nekog zvaničnog sajta, kratki isečci iz videa itd.
+### References <a name="izvori"></a>
 
-Izvor (po mogućnosti) treba da sadrži:
+Inline references are inserted with the `<w-ref>` tag. All sources can have a name, and using that name you can re-use them. **For the list of references at the bottom of the page to show up, you need to add a `<w-reflist>` tag at the end of the article**.
 
-- Ime i prezime autora
+Good sources are: Books, news articles, information from some official site, short video clips, etc.
 
-- Godinu objavljivanja
+A source should (if possible) include:
 
-- Ime materijala (naslov članka, naslov videa, ime knjige)
+- First and last name of author
 
-- URL do materijala
+- Year of publishing
 
-- Naglasiti ako je materijal preuzet iz arhiva (npr. Internet Archive/Wayback Machine)
+- Name of the source (Article title, title of video, etc.)
 
-#### Primer:
+- URL to the source
 
-`<w-ref name="izbori 2012"><w-a>https://www.vreme.com/projekat/izbori-2012-rezultati-i-postizborna-trgovina/|"Izbori 2012: Rezultati i postizborna trgovina"</w-a>. <i>Vreme</i>. 10. Maj 2012. Arhivirano 30. Juna 2022.</w-ref>`
+- You should make it clear if the source is gotten from an archive.
 
-Ako bi hteli opet da stavimo isti ovaj izvor sa istim brojem u jednom članku, samo bi napisali:
+#### Examples:
 
-`<w-ref name="izbori 2012"></w-ref>`
+`<w-ref name="elections 2012"><w-a>https://www.vreme.com/projekat/izbori-2012-rezultati-i-postizborna-trgovina/|"Izbori 2012: Rezultati i postizborna trgovina"</w-a>. <i>Vreme</i>. 10. Maj 2012. Arhivirano 30. Juna 2022.</w-ref>`
 
-`name` atribut **NIJE** obavezan, samo se koristi za ponovno korišćenje istog izvora.
+If we want to use this same source with the same number again, we would just type:
 
-Formatiranje iznad bi imalo ovakve rezultate:
+`<w-ref name="elections 2012"></w-ref>`
+
+The `name` attribute is **NOT** required, it's just used to avoid typing the same thing again.
+
+The code above would have the following results:
 
 ![Referenca Primer 1](../images/refEx.png)
 
-Na kraju stranice stavljamo `<w-reflist></w-reflist>` za listu svih izvora navedenih u tekstu, što izgleda ovako:
+At the end of the page we would insert `<w-reflist></w-reflist>` for the list of all sources used in the article, which would look like this:
 
 ![Referenca Primer 2](../images/refEx2.png)
 
-Da bi promenili naslov "Izvori" možemo staviti atribut "title" da bude novi naslov, na primer `<w-reflist title="Reference"></w-reflist>`
+To change the title of this section (In this case it's "Izvori", the serbian for "Sources"), we need to change the "title" attribute, for example `<w-reflist title="References"></w-reflist>`.
 
-### Anotacije
+### Annotations
 
-Anotacije (en. annotations) predstavljaju stilizovani tekst koji je "aligned" na sredini stranice. Koriste se za neke napomene, dodatne informacije ili upozorenja vezana za stranicu.
+Annotations represent stylized text aligned to the middle of the page. They're used for some information for the reader or other editors.
 
-Oni se ubacuju u stranicu sa `<w-annotation>` tagom i imaju tri vrste: `none`, `warn` i `danger`. Ove vrste se određuju `type` atributom, a "default" je none.
+Oni se ubacuju u stranicu sa `<w-annotation>` tagom i imaju tri vrste: `none`, `warn` i `danger`. Ove vrste se određuju `type` atributom, a "default" je `none`.
 
-`none` je običan *italic* tekst na sredini stranice. Inače obeležava neke dodatne informacije za čitaoca, kao na primer ako postoji drugi članak sa sličnim imenom.
+They're inserted with `<w-annotation>` tag and have three types: `none`, `warn` and `danger`. These types are assigned with the `type` attribute, and the default is `none`.
 
-`warn` ima žutu marginu i obaveštava o nekim važnim ali ne i nužno hitnim stvarima. Na Wikipediji on bi se koristio da se označi kad je neki članak "outdated" ili ako nema dovoljno izvora.
+`none` is a regular *italic* paragraph aligned to the middle of the page. It usually represents some sort of extra info for the reader, like for example if there's a similar article with the same name.
+
+`warn` has a yellow border and notifies other editors about some important but not necessarily urgent issues with the article. On Wikipedia it's used to mark an article that's outdated or doesn't have adequate sources.
 
 `danger` ima crvenu marginu i obaveštava o stvarima koje hitno moraju da se promene na stranici. Na Wikipediji on bi se koristio da obavesti druge urednike da je članak neadekvatan za sajt i da ga treba obrisati.
 
-#### Primer:
+`danger` has a red border and notifies other editors about urgent issues with the article. On Wikipedia it's used for pages that are due for deletion.
 
-`<w-annotation> Ovo je članak o Covid protestima 2020. godine, za ekološke proteste sličnog imena, pogledajte <w-a>Ekološki protesti 2020</w-a></w-annotation>`
+#### Examples:
+
+`<w-annotation> Ovo je članak o Covid protestima 2020. godine, za ekološke proteste sličnog imena, pogledajte <w-a>Ekološki protesti 2020</w-a> </w-annotation>`
 
 `<w-annotation type="warn">Ovaj članak nema dovoljno izvora. Treba dodati još.</w-annotation>`
 
-Formatiranje iznad bi napravilo ovakve anotacije: 
+The code above would result in the following:
 
 ![Anotacije Primer 1](../images/annotationEx1.png)
 ![Anotacije Primer 2](../images/annotationEx2.png)
 
-### Infoboksevi
+### Infoboxes
 
-Infoboks (en. infobox) je element koji sadrži neke generalne informacije o stranici na kojoj se nalazi. Evo primera sa wikipedije:
+Infobox is an element which contains some general information about the page which it's on. Wikipedia example:
 
 ![Infobox Primer](../images/oreo-primer.png)
 
-Na mom sajtu se infoboksevi dodaju u sledećoj formi:
+On SNSWiki, you would add an infobox like this:
 
 ```
-<w-infobox title="COVID Protesti 2020">
-[Infoboks elementi]
+<w-infobox title="2020 COVID Protests">
+[Infobox elements]
 </w-infobox>
 ```
 
-**Infoboks elementi**, koji imaju prefiks `wi-`, su sledeći:
+**Infobox elements**, which use the prefix `wi-`, are as follows:
 
-- `<wi-section>` je naslov odeljka u infoboksu. Koristi se isto kao tagovi za naslov samo što nema više veličina. Default boja pozadine naslova je plava.
+- `<wi-section>` is the section title in an infobox. The default background color is blue.
 
-- `<wi-image>` je puna slika u infoboksu. Koristi se kao obični tag za [slike](#slike).
+- `<wi-image>` is a full-sized image in an infobox. It's used exactly like other [image](#slike) tags.
 
-- `<wi-row>` koji predstavlja obični red u infoboksu sa levom i desnom vrednošću. Leva i desna strana su odvojene karakterom `|`. I leva i desna strana mogu da sadrže linkove i liste. Nasuprot, da bi stavili SLIKU na levu ili desnu stranu morate koristiti element `<wic-image>`. Koristi se isto kao drugi elementi za slike ali ne može da ima tekst ispod.
+- `<wi-row>` represents a row in an infobox, it has two values, left and right. The left and right values are seperated with the `|` character. Both left and right values can be links and lists. However if you wish to add an image to the left or right fields, you need to use `<wic-image>` which is used like other image tags but can't have a caption.
 
-- `<wi-vs>` je element koji služi za prikazivanje dve suprotstavljene strane.
+- `<wi-vs>` is an element used for representing two opposed sides.
 
-    On u sebi mora da sadrži bar 2 `<wvs-side>` dela, koji predstavljaju suprotstavljene strane, i te strane moraju sadržati svoje partije koje su predstavljene `<wvs-p>` elementom.
+    It needs to include at least 2 `<wvs-side>` elements, which represent the sides. Those sides need to include `<wvs-p>` which represent the parties on each side.
 
-    Same partije mogu biti običan tekst, linkovi ili liste. Ako je partija lista u `<wvs-p>` element je moguće staviti dva opciona atributa, `list` i `collapsed`, gde `list` označava boldovani naslov liste, a `collapsed` označava da li je ta lista "kolapsovana" (sakrivena).
+    Those parties can be text, links or lists. If the party is a list, the `<wvs-p>` element can include the `list` and `collapsed` attributes. The `list` attribute is the title of the list, and the `collapsed` attribute determines if the list is collapsable.
 
-#### Primer:
+#### Example:
 
-Ovo je jedan kompletan infoboks, tekst je na engleskom jer je preuzet sa Wikipedija stranice za proteste "Srbije Protiv Nasilja":
+Here's a complete infobox example:
 
 ```
 <w-infobox title="2023 Serbian protests">
@@ -356,6 +354,6 @@ Ovo je jedan kompletan infoboks, tekst je na engleskom jer je preuzet sa Wikiped
 </w-infobox>
 ```
 
-Ovaj kod nam daje sledeći infobox:
+This code gives the following result:
 
 ![Infobox Primer](../images/infoboxEx.png)
