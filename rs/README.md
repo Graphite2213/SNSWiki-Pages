@@ -1,5 +1,7 @@
 # Dobrodošli na Srpski SNSWiki!
 
+Neću dužiti sa nekim mojim govorom o tome kako i zašto sam napravio ovo, za to pogledajte glavnu stranicu same SNSWikije. Ovaj README je većinom o tome kako zapravo urediti nešto na wikiji.
+
 ## Sadržaj
 
 1. [Kako sajt funkcioniše](#funkcija)
@@ -42,7 +44,7 @@ Ovo u osnovi znači da morate da napravite kopiju SNSWikije na svom nalogu, odav
 
 Ovde unosite ime fajla i njegov sadržaj. U gornjem textbox-u morate da unesete **naziv foldera**, i onda da upišete naziv fajla. Na primer, za članak s imenom "Primer", u gornji textbox bi ste napisali `Primer/primer.html`. Tako se kreira i folder i fajl za stranicu koju pravite. Ja sam to već uradio u ovoj slici.
 
-U donjem, velikom textbox-u, se unosi sadržaj `.html` fajla iliti sadržaj stranice koju stvarate.
+U donjem, velikom textbox-u, se unosi članak koji ste predhodno napisali.
 
 Pritiskanjem zelenog dugmeta "commit changes" čuvate izmene i prelazite na četvrti korak.
 
@@ -77,7 +79,7 @@ Ovaj fajl sadrži generalne meta-podatke za srpsku stranu sajta. Osim stranica (
 
 ### `placeholder.html` fajl
 
-Ovaj fajl predstavlja tekst koji je učitan kad na wikiji pratite link koji nema stranicu još uvek. Takvi linkovi su na sajtu crveni.
+Ovaj fajl predstavlja članak koji je učitan kad na wikiji pratite link koji nema stranicu još uvek. Takvi linkovi su na sajtu crveni.
 
 ## Struktura jedne stranice <a name="struktura"></a>
 
