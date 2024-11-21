@@ -13,7 +13,7 @@ Neću dužiti sa nekim mojim govorom o tome kako i zašto sam napravio ovo, za t
 
 ## Kako sajt funkcioniše / Kako doprineti <a name="funkcija"></a>
 
-Sajt <a href="https://sns.graphite.in.rs/">SNSWiki</a> vuče podatke (stranice) odavde. Da bi stvorili stranicu morate da napravite folder koji odgovara stranici koju pokušavate da napravite, ime foldera je ujedno i naslov stranice. Struktura tog foldera je definisana [ovde](#struktura).
+Sajt <a href="https://sns.graphite.in.rs/">SNSWiki</a> vuče podatke (stranice) odavde. Da bi stvorili stranicu morate da napravite folder koji odgovara stranici koju pokušavate da stvorite, ime foldera je ujedno i naslov stranice. Struktura tog foldera je definisana [ovde](#struktura).
 
 #### Kako zapravo napraviti novu stranicu
 
