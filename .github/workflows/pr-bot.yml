@@ -3,8 +3,8 @@ name: Review
 on: 
   pull_request_target:
     paths:
-      - "/en/*"
-      - "/rs/*"
+      - "../../en/*"
+      - "../../rs/*"
 
 jobs:
   auto-approve:
