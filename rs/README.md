@@ -13,9 +13,44 @@ Neću dužiti sa nekim mojim govorom o tome kako i zašto sam napravio ovo, za t
 
 ## Kako sajt funkcioniše / Kako doprineti <a name="funkcija"></a>
 
-Sajt <a href="https://sns.graphite.in.rs/">SNSWiki</a> vuče podatke (stranice) odavde. Da bi stvorili stranicu morate da napravite folder koji odgovara stranici koju pokušavate da stvorite, ime foldera je ujedno i naslov stranice. Struktura tog foldera je definisana [ovde](#struktura).
+Sajt <a href="https://sns.graphite.in.rs/">SNSWiki</a> vuče podatke (stranice) odavde. Jedna stranica je zapravo samo folder. Da bi stvorili stranicu morate stvoriti taj folder, a ime foldera je ujedno i naslov stranice. 
 
-#### Kako zapravo napraviti novu stranicu
+### Struktura foldera
+
+Folder stranice treba da sadrži `.html` fajl sa istim imenom (ali malim slovima), koji je sav tekst i elementi koji se nalaze na stranici. Folder može imati i `Images` folder koji sadrži sve slike koje ta stranica koristi.
+
+Taj folder takođe može sadržati `.json` fajl sa istim imenom (ali malim slovima) koji u sebi sadrži metapodatke za tu stranicu. Zasad su ti metapodaci u sledećem formatu:
+
+```
+{
+    link: "",
+    keywords: []
+}
+```
+
+Ovde je `link` ime te stranice na drugom jeziku (ako ste na srpskoj wikiji, onda je to ime stranice na engleskoj strani sajta). To povezuje dve strane wikije.
+`keywords` niz sadrži ključne reči za SEO, u osnovi, to su reči po kojima Google i ostali pretraživači pamte tu stranicu.
+
+Sve u ovoj strukturi je **case-sensitive**, `Images` počinje velikim slovom, `.json` i `.html` fajlovi su uvek sve malim slovima. Samo ime foldera je naslov stranice koji se prikazuje na sajtu pa velika i mala slova trebaju da budu adekvatna.
+
+#### Primer strukture jedne stranice:
+
+```
+📂 Covid Protesti 2020
+┣ 📂 Images
+┃  ┣ 🖼️ Protest_ispred_skupstine.png
+┃  ┣ 🖼️ Policija_bije_gradjane.png
+┃  ┗ 🖼️ Protest_2.png
+┣ 📄 covid protesti 2020.html
+┗ 📄 covid protesti 2020.json
+```
+
+Ovde bi `covid protesti 2020.html` bila stranica koja se pojavljuje na sajtu pod imenom "Covid Protesti 2020", a u `link` polju u `.json` fajlu bi pisalo ime te stranice na engleskoj strani wikije.
+
+U suštini, jedino što je potrebno da sajt funkcioniše je sam folder i `.html` fajl unutar njega.
+
+
+### Kako zapravo napraviti novu stranicu
 
 Kako sam ja zamislio da se koristi ovaj sajt je:
 
@@ -58,7 +93,7 @@ Ovo je poslednji korak. Ovde unosite poruku koju imate za izmene. Klikom na zele
 
 Pošto jednom prođete ove korake moćićete da menjate/stvarate bilo koju stranicu bez da prolazite kroz sve ovo ponovo.
 
-#### Uređivanje već postojećih članaka
+### Uređivanje već postojećih članaka
 
 Ukoliko fajl već postoji, kad ga locirate i otvorite u GitHub-u pojaviće se mala ikonica olovke. Kad nju kliknete moćićete da menjate taj fajl.
 
@@ -81,40 +116,6 @@ Ovaj fajl sadrži generalne meta-podatke za srpsku stranu sajta. Osim stranica (
 ### `placeholder.html` fajl
 
 Ovaj fajl predstavlja članak koji je učitan kad na wikiji pratite link koji nema stranicu još uvek. Takvi linkovi su na sajtu crveni.
-
-## Struktura jedne stranice <a name="struktura"></a>
-
-Folder stranice treba da sadrži `.html` fajl sa istim imenom (ali malim slovima), koji je sav tekst i elementi koji se nalaze na stranici. Folder može imati i `Images` folder koji sadrži sve slike koje ta stranica koristi.
-
-Taj folder takođe može sadržati `.json` fajl sa istim imenom (ali malim slovima) koji u sebi sadrži metapodatke za tu stranicu. Zasad su ti metapodaci u sledećem formatu:
-
-```
-{
-    link: "",
-    keywords: []
-}
-```
-
-Ovde je `link` ime te stranice na drugom jeziku (ako ste na srpskoj wikiji, onda je to ime stranice na engleskoj strani sajta). To povezuje dve strane wikije.
-`keywords` niz sadrži ključne reči za SEO, u osnovi, to su reči po kojima Google i ostali pretraživači pamte tu stranicu.
-
-Sve u ovoj strukturi je **case-sensitive**, `Images` počinje velikim slovom, `.json` i `.html` fajlovi su uvek sve malim slovima. Samo ime foldera je naslov stranice koji se prikazuje na sajtu pa velika i mala slova trebaju da budu adekvatna.
-
-#### Primer strukture jedne stranice:
-
-```
-📂 Covid Protesti 2020
-┣ 📂 Images
-┃  ┣ 🖼️ Protest_ispred_skupstine.png
-┃  ┣ 🖼️ Policija_bije_gradjane.png
-┃  ┗ 🖼️ Protest_2.png
-┣ 📄 covid protesti 2020.html
-┗ 📄 covid protesti 2020.json
-```
-
-Ovde bi `covid protesti 2020.html` bila stranica koja se pojavljuje na sajtu pod imenom "Covid Protesti 2020", a u `link` polju u `.json` fajlu bi pisalo ime te stranice na engleskoj strani wikije.
-
-U suštini, jedino što je potrebno da sajt funkcioniše je sam folder i `.html` fajl unutar njega.
 
 ## Uputstvo za korišćenje editora<a name="editor"></a>
 
