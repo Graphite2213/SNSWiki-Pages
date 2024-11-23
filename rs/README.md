@@ -6,7 +6,7 @@ Neću dužiti sa nekim mojim govorom o tome kako i zašto sam napravio ovo, za t
 
 1. [Kako sajt funkcioniše](#funkcija)
 2. [Pravila uređivanja](#pravila)
-3. [Ovaj folder `/rs/`](#folder)
+3. [Ovaj folder (`/rs/`)](#folder)
 4. [Uputstvo za korišćenje editora](#editor)
 5. [Formatiranje / Sintaksa](#formatiranje)
 
@@ -106,7 +106,7 @@ Ukoliko fajl već postoji, kad ga locirate i otvorite u GitHub-u pojaviće se ma
 
 - Svaka velika tvrdnja na stranici mora biti podržana sa odgovarajućim [izvorom](#izvori).
 
-## Ovaj folder `/rs/` <a name="folder"></a>
+## Ovaj folder (`/rs/`) <a name="folder"></a>
 
 ### `rs-meta.json` fajl 
 
