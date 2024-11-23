@@ -1,4 +1,5 @@
 name: snswiki-update
+run-name: "Updating site metadata"
 on: [push]
 
 jobs:
@@ -24,10 +25,12 @@ jobs:
         run: git stage .
 
       - name: Commit edited files
+        continue-on-error: true
         run: |
           git config --global user.name '${{secrets.GITHUB_TOKEN}}'
           git config --global user.email '${{secrets.GITHUB_TOKEN}}'
           git commit -m "Auto-update of site metadata"
 
       - name: Push back files
+        continue-on-error: true
         run: git push origin
