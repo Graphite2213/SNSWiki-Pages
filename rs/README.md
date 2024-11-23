@@ -5,11 +5,13 @@ Neću dužiti sa nekim mojim govorom o tome kako i zašto sam napravio ovo, za t
 ## Sadržaj
 
 1. [Kako sajt funkcioniše](#funkcija)
+-  1.1 Struktura foldera stranice
+-  1.2 Kako zapravo napraviti stranicu
+-  1.3 Uređivanje već postojećih stranica
 2. [Pravila uređivanja](#pravila)
 3. [Ovaj folder `/rs/`](#folder)
 4. [Uputstvo za korišćenje editora](#editor)
-5. [Struktura stranice](#struktura)
-6. [Formatiranje / Sintaksa](#formatiranje)
+5. [Formatiranje / Sintaksa](#formatiranje)
 
 ## Kako sajt funkcioniše / Kako doprineti <a name="funkcija"></a>
 
@@ -17,7 +19,7 @@ Sajt <a href="https://sns.graphite.in.rs/">SNSWiki</a> vuče podatke (stranice) 
 
 ### Struktura foldera
 
-Folder stranice treba da sadrži `.html` fajl sa istim imenom (ali malim slovima), koji je sav tekst i elementi koji se nalaze na stranici. Folder može imati i `Images` folder koji sadrži sve slike koje ta stranica koristi.
+Folder stranice treba da sadrži `.html` fajl sa istim imenom (ali malim slovima), koji je članak koji se učitava na stranici koju uređujete. Formatiran je po pravilima definisanim [ispod](#formatiranje). Folder može imati i `Images` folder koji sadrži sve slike koje ta stranica koristi.
 
 Taj folder takođe može sadržati `.json` fajl sa istim imenom (ali malim slovima) koji u sebi sadrži metapodatke za tu stranicu. Zasad su ti metapodaci u sledećem formatu:
 
