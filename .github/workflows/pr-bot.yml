@@ -1,7 +1,7 @@
-name: Review
+name: auto-review
 
 on: 
-  pull_request_target:
+  [pull_request_target]:
     paths:
       - "../../en/*"
       - "../../rs/*"
