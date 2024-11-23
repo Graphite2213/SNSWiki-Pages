@@ -6,9 +6,8 @@ on:
 jobs:
   auto-approve:
     runs-on: ubuntu-latest
-    permissions:
-      pull-requests: write
     steps:
       - uses: hmarr/auto-approve-action@v4
         with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           review-message: "Auto-approved edit made to page."
