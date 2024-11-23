@@ -5,9 +5,6 @@ Neću dužiti sa nekim mojim govorom o tome kako i zašto sam napravio ovo, za t
 ## Sadržaj
 
 1. [Kako sajt funkcioniše](#funkcija)
-  1.1 Struktura foldera stranice
-  1.2 Kako zapravo napraviti stranicu
-  1.3 Uređivanje već postojećih stranica
 2. [Pravila uređivanja](#pravila)
 3. [Ovaj folder `/rs/`](#folder)
 4. [Uputstvo za korišćenje editora](#editor)
