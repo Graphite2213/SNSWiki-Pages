@@ -1,5 +1,4 @@
 name: snswiki-update
-run-name: ${{ github.actor }} updated SNSWiki.
 on: [push]
 
 jobs:
@@ -26,9 +25,9 @@ jobs:
 
       - name: Commit edited files
         run: |
-          git config --global user.name 'Graphite2213'
-          git config --global user.email '88732099+Graphite2213@users.noreply.github.com'
-          git commit --allow-empty -m "Auto-update of site metadata; Performed by ${{github.actor}}"
+          git config --global user.name '${{secrets.GITHUB_TOKEN}}'
+          git config --global user.email '${{secrets.GITHUB_TOKEN}}'
+          git commit -m "Auto-update of site metadata"
 
       - name: Push back files
         run: git push origin
