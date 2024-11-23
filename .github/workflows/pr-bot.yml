@@ -1,10 +1,7 @@
 name: auto-review
 
 on: 
-  pull_request:
-    paths:
-      - "../../en/*"
-      - "../../rs/*"
+  pull_request_target
 
 jobs:
   auto-approve:
