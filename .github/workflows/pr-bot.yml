@@ -10,4 +10,4 @@ jobs:
       - uses: hmarr/auto-approve-action@v4
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          review-message: "Auto-approved edit made to page."
+          review-message: "Auto-approved edit made to page. // Automatski odobrene izmene za stranicu."
