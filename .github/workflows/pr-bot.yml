@@ -1,6 +1,15 @@
 name: auto-review
 
-on: pull_request_target
+on: 
+  pull_request_target:
+    paths:
+      - en/*/
+      - rs/*/
+env:
+  MERGE_LABELS: "autosquash"
+  MERGE_REMOVE_LABELS: "autosquash"
+  MERGE_METHOD: "squash"
+  MERGE_COMMIT_MESSAGE: "pull-request-title"
 
 jobs:
   labeler:
@@ -11,9 +20,14 @@ jobs:
     steps:
     - uses: actions/labeler@v5
     
-  auto-squash:
+  automerge:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
     steps:
-      - uses: tibdex/autosquash@v2
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+      - id: automerge
+        name: automerge
+        uses: "pascalgn/automerge-action@v0.16.4"
+        env:
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
