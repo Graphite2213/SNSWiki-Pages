@@ -13,7 +13,11 @@ jobs:
     steps:
       - name: Checkout repository content
         uses: actions/checkout@v4 # Checkout the repository content to github runner.
-
+        
+      - name: Sleep for 2 minutes
+        run: sleep 60s
+        shell: bash
+   
       - name: Setup Python Version
         uses: actions/setup-python@v5
         with:
