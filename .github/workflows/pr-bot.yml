@@ -50,7 +50,7 @@ jobs:
         name: automerge
         uses: "pascalgn/automerge-action@v0.16.4"
         env:
-          GITHUB_TOKEN: "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"
+          GITHUB_TOKEN: "${{ secrets.WIKIUPDATE_SECRET }}"
           LOG: "DEBUG"
           MERGE_LABELS: "autosquash"
           MERGE_REMOVE_LABELS: "autosquash"
