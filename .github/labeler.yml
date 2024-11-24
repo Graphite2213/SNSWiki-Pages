@@ -1,0 +1,5 @@
+autosquash:
+- changed-files:
+  - any-glob-to-any-file:
+    - en/**
+    - rs/**
