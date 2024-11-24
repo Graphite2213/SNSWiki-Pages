@@ -15,6 +15,9 @@ def main():
     allFilesEn = []
     allFilesRs = []
 
+    for x in filenamesRs:
+        print(x)
+    
     for x in filenamesEn:
         allFilesEn.append(x.split("/")[-2]);
 
