@@ -3,8 +3,16 @@ name: auto-review
 on: 
   pull_request_target:
     paths:
-      - en/*/
-      - rs/*/
+      - en/*/*
+      - en/*/Images/*.jpe?g
+      - en/*/Images/*.png
+      - en/*/Images/*.svg
+      - en/*/Images/*.webp
+      - rs/*/*
+      - rs/*/Images/*.jpe?g
+      - rs/*/Images/*.png
+      - rs/*/Images/*.svg
+      - rs/*/Images/*.webp
 env:
   MERGE_LABELS: "autosquash"
   MERGE_REMOVE_LABELS: "autosquash"
