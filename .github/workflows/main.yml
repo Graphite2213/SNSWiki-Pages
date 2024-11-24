@@ -16,10 +16,13 @@ jobs:
           python-version: 3.8 # Install the python version needed
 
       - name: Install Python dependencies
-        run: python -m pip install --upgrade pip requests
+        run: |
+          python -m pip install --upgrade pip requests
+          python -m pip install numpy
 
       - name: Execute Python script # Run the run.py to get the latest data
-        run: python main.py
+        id: execute_python
+        run: python main.py >> $GITHUB_OUTPUT
 
       - name: Stage edited files
         run: git stage .
@@ -29,7 +32,7 @@ jobs:
         run: |
           git config --global user.name '${{secrets.GITHUB_TOKEN}}'
           git config --global user.email '${{secrets.GITHUB_TOKEN}}'
-          git commit -m "Auto-update of site metadata"
+          git commit -m "${{join(steps.execute_python.outputs.*, '\n')}}"
 
       - name: Push back files
         continue-on-error: true
