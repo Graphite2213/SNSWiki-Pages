@@ -33,6 +33,7 @@ jobs:
         uses: "pascalgn/automerge-action@v0.16.4"
         env:
           GITHUB_TOKEN: "${{ secrets.WIKIUPDATE_SECRET }}"
+          LOG: "DEBUG"
           MERGE_LABELS: "autosquash"
           MERGE_REMOVE_LABELS: "autosquash"
           MERGE_METHOD: "squash"
