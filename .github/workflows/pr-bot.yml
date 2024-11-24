@@ -1,7 +1,7 @@
 name: auto-review
 
-on: 
-  pull_request_target:
+on:
+  pull_request:
     paths:
       - en/*/*
       - en/*/Images/*.jpe?g
@@ -13,6 +13,23 @@ on:
       - rs/*/Images/*.png
       - rs/*/Images/*.svg
       - rs/*/Images/*.webp
+    types:
+      - labeled
+      - unlabeled
+      - synchronize
+      - opened
+      - edited
+      - ready_for_review
+      - reopened
+      - unlocked
+  pull_request_review:
+    types:
+      - submitted
+  check_suite:
+    types:
+      - completed
+  status: {}
+      
 
 jobs:
   labeler:
