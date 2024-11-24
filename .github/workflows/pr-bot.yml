@@ -4,10 +4,9 @@ on:
   pull_request_target
 
 jobs:
-  auto-approve:
+  auto-squash:
     runs-on: ubuntu-latest
     steps:
-      - uses: hmarr/auto-approve-action@v4
+      - uses: tibdex/autosquash@v2
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          review-message: "Auto-approved edit made to page. // Automatski odobrene izmene za stranicu."
+          github_token: ${{ secrets.GITHUB_TOKEN }}
