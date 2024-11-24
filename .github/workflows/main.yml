@@ -3,8 +3,8 @@ run-name: "Updating site metadata"
 on: 
   push:
     paths:
-      - en/*/
-      - rs/*/
+      - en/*
+      - rs/*
 
 jobs:
   build:
