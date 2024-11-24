@@ -13,11 +13,6 @@ on:
       - rs/*/Images/*.png
       - rs/*/Images/*.svg
       - rs/*/Images/*.webp
-env:
-  MERGE_LABELS: "autosquash"
-  MERGE_REMOVE_LABELS: "autosquash"
-  MERGE_METHOD: "squash"
-  MERGE_COMMIT_MESSAGE: "pull-request-title"
 
 jobs:
   labeler:
@@ -38,3 +33,7 @@ jobs:
         uses: "pascalgn/automerge-action@v0.16.4"
         env:
           GITHUB_TOKEN: "${{ secrets.WIKIUPDATE_SECRET }}"
+          MERGE_LABELS: "autosquash"
+          MERGE_REMOVE_LABELS: "autosquash"
+          MERGE_METHOD: "squash"
+          MERGE_COMMIT_MESSAGE: "pull-request-title"
