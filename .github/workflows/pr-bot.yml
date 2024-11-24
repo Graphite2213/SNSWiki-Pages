@@ -50,7 +50,7 @@ jobs:
         name: automerge
         uses: "pascalgn/automerge-action@v0.16.4"
         env:
-          GITHUB_TOKEN: "{{ secrets.SNSWIKI_KEY }}"
+          GITHUB_TOKEN: "${{ secrets.SNSWIKI_KEY }}"
           LOG: "DEBUG"
           MERGE_LABELS: "autosquash"
           MERGE_REMOVE_LABELS: "autosquash"
