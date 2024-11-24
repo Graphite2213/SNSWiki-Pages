@@ -26,7 +26,8 @@ jobs:
   automerge:
     needs: labeler
     runs-on: ubuntu-latest
-    permissions: write-all
+    permissions: 
+      contents: write
     steps:
       - id: automerge
         name: automerge
