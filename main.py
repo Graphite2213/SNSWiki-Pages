@@ -34,10 +34,10 @@ def main():
 
     if len(originalMetaEn) < len(allFilesEn):
         return "Created page: \"" + np.setdiff1d(originalMetaEn, allFilesEn)[0] + '"'
-    else if len(originalMetaEn) > len(allFilesEn):
+    elif len(originalMetaEn) > len(allFilesEn):
         return "Deleted page: \"" + np.setdiff1d(originalMetaEn, allFilesEn)[0] + '"'
         
-    else if len(originalMetaRs) < len(allFilesRs):
+    elif len(originalMetaRs) < len(allFilesRs):
         return "Stvorena stranica: \"" + np.setdiff1d(originalMetaRs, allFilesRs)[0] + '"'
-    else if len(originalMetaRs) > len(allFilesRs):
+    elif len(originalMetaRs) > len(allFilesRs):
         return "Obrisana stranica: \"" + np.setdiff1d(originalMetaRs, allFilesRs)[0] + '"'
