@@ -1,7 +1,7 @@
 name: snswiki-update
 run-name: "Updating site metadata"
 on: 
-  [push]:
+  push:
     paths:
       - en/**
       - rs/**
