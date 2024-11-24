@@ -1,7 +1,7 @@
 name: auto-review
 
 on:
-  pull_request:
+  pull_request_target:
     paths:
       - en/*/*
       - en/*/Images/*.jpe?g
@@ -34,7 +34,7 @@ on:
 jobs:
   labeler:
     permissions:
-      contents: read
+      contents: write
       pull-requests: write
     runs-on: ubuntu-latest
     steps:
