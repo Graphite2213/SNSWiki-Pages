@@ -1,11 +1,6 @@
 name: auto-review
 
-on: 
-  pull_request_target:
-    types:
-      - labeled
-      - submitted
-  status: {}
+on: pull_request_target
 
 jobs:
   labeler:
