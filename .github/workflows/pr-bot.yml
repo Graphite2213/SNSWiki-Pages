@@ -1,0 +1,59 @@
+name: auto-review
+
+on:
+  pull_request_target:
+    paths:
+      - en/*/*
+      - en/*/Images/*.jpe?g
+      - en/*/Images/*.png
+      - en/*/Images/*.svg
+      - en/*/Images/*.webp
+      - rs/*/*
+      - rs/*/Images/*.jpe?g
+      - rs/*/Images/*.png
+      - rs/*/Images/*.svg
+      - rs/*/Images/*.webp
+    types:
+      - labeled
+      - unlabeled
+      - synchronize
+      - opened
+      - edited
+      - ready_for_review
+      - reopened
+      - unlocked
+  pull_request_review:
+    types:
+      - submitted
+  check_suite:
+    types:
+      - completed
+  status: {}
+      
+
+jobs:
+  labeler:
+    permissions:
+      contents: write
+      pull-requests: write
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/labeler@v5
+    
+  automerge:
+    needs: labeler
+    runs-on: ubuntu-latest
+    permissions: 
+      contents: write
+    steps:
+      - id: automerge
+        name: automerge
+        uses: "pascalgn/automerge-action@v0.16.4"
+        env:
+          GITHUB_TOKEN: "${{ secrets.SNSWIKI_KEY }}"
+          LOG: "DEBUG"
+          MERGE_LABELS: "autosquash"
+          MERGE_REMOVE_LABELS: "autosquash"
+          MERGE_METHOD: "squash"
+          MERGE_COMMIT_MESSAGE: "pull-request-title"
+          MERGE_RETRY_SLEEP: 1000
