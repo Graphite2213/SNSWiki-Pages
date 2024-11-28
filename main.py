@@ -2,15 +2,16 @@ import glob
 import os
 import json
 import numpy as np
+import json5
 
 filenamesEn = glob.glob("./en/*/*.html", recursive=True)
 filenamesRs = glob.glob("./rs/*/*.html", recursive=True)
 
 with open("./en/en-meta.json", 'r+') as file:
-    metaEn = json.load(file)
+    metaEn = json5.load(file)
 
 with open("./rs/rs-meta.json", 'r+') as file:
-    metaRs = json.load(file)
+    metaRs = json5.load(file)
 
 allFilesEn = []
 allFilesRs = []
