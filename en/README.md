@@ -85,13 +85,16 @@ It could also contain a `.json` file with the same name as the folder (but lower
 
 ```
 {
-    link: "",
-    keywords: []
+    "link": "",
+    "keywords": [],
+    "description": "",
+    "image": ""
 }
 ```
 
 The `link` property is the name of the article in Serbian, this connects the two sides of the wiki.
 The `keywords` array contains the SEO keywords.
+`description` represents a short description of the article, and `image` is an image in the `Images` folder that represents the article.
 
 Everything in this structure is **case-sensitive**, `Images` starts with an uppercase I, the `.json` and `.html` files are always lowercase. The name of the folder is the title of the page that shows up on the site, and as such the capitalization should be adequate.
 
@@ -131,7 +134,7 @@ The markup language this wiki uses is, like everything else, custom made by me. 
 For everyone unfamiliar with HTML, here's a crash course:
 
 - Almost all tags that open need to close, using that same tag with the `/` character: `<tag></tag>`
-- HTML ignores newlines and more than one space (If you were to type "abcdef      ghi", only "abdcef ghi" would show up)
+- HTML ignores newlines and more than one space (If you were to type `"abcdef      ghi"`, only "abdcef ghi" would show up)
 
 Some basic tags are:
 - `<p></p>`, text inside these tags counts as a paragraph, and as such is spaced out away from the text surrounding it. All blocks of text should be paragraphs.
@@ -207,7 +210,7 @@ A source should (if possible) include:
 
 #### Examples:
 
-`<w-ref name="elections 2012"><w-a>https://www.vreme.com/projekat/izbori-2012-rezultati-i-postizborna-trgovina/|"Izbori 2012: Rezultati i postizborna trgovina"</w-a>. <i>Vreme</i>. 10. Maj 2012. Arhivirano 30. Juna 2022.</w-ref>`
+`<w-ref name="elections 2012"><w-a>"Izbori 2012: Rezultati i postizborna trgovina"|https://www.vreme.com/projekat/izbori-2012-rezultati-i-postizborna-trgovina/</w-a>. <i>Vreme</i>. 10. Maj 2012. Arhivirano 30. Juna 2022.</w-ref>`
 
 If we want to use this same source with the same number again, we would just type:
 
@@ -236,8 +239,6 @@ They're inserted with `<w-annotation>` tag and have three types: `none`, `warn` 
 `none` is a regular *italic* paragraph aligned to the middle of the page. It usually represents some sort of extra info for the reader, like for example if there's a similar article with the same name.
 
 `warn` has a yellow border and notifies other editors about some important but not necessarily urgent issues with the article. On Wikipedia it's used to mark an article that's outdated or doesn't have adequate sources.
-
-`danger` ima crvenu marginu i obaveštava o stvarima koje hitno moraju da se promene na stranici. Na Wikipediji on bi se koristio da obavesti druge urednike da je članak neadekvatan za sajt i da ga treba obrisati.
 
 `danger` has a red border and notifies other editors about urgent issues with the article. On Wikipedia it's used for pages that are due for deletion.
 
