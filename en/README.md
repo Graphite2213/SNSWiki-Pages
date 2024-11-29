@@ -67,6 +67,8 @@ Once you go through this process once you will be able to edit or create any pag
 
 - All large claims made need to be backed by a [source](#izvori).
 
+- All images added to the `Images` folder need to be copyright free/free use. If you add any images covered by copyright you need explicit permission from the author.
+
 ## This  folder (`/en/`)<a name="folder"></a>
 
 ### `en-meta.json` file 
