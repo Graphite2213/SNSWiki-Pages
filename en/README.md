@@ -4,7 +4,7 @@
 ## Contents
 
 1. [How to contribute](#funkcija)
-2. [Editing rules](#pravila)
+2. [Editing guidelines](#pravila)
 3. [This folder (`/en/`)](#folder)
 4. [Editor use guide](#editor)
 5. [Page folder structure](#struktura)
