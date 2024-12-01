@@ -12,7 +12,7 @@
 
 ## Editing Guidelines<a name="pravila"></a>
 
-- Use reliable sources, referencing government-influenced tabloids should be avoided.
+- Use reliable sources, referencing government-leaning tabloids should be avoided.
 
 - For discussing a specific tab use the "discussions" tab on GitHub, and for any other site-related suggestions use the "issues" tab.
 
