@@ -35,11 +35,11 @@ I imagined the use of this page to go like this:
 
 But then i realized that most people likely don't have experience with GitHub's UI and such.
 
-##### 1. GitHub account
+#### 1. GitHub account
 
 Unfortunately you do need a GitHub account to make changes to repositories, and by extension SNSWiki.
 
-##### 2. Creating a new page
+#### 2. Creating a new page
 
 First you need to go to the `/en/` folder (this one) and you will see an "add files" button.
 
@@ -55,7 +55,7 @@ This just means that you will have to create a copy of the wiki on your own GitH
 
 On this page you're filling out the file name, its path and its contents. In the upper, smaller, textbox, you should to put in the **name of the folder**, and then the name of the file. For example, if you're creating a page called "Example" you would type in `Example/example.html`.
 
-In the lower, bigger, textbook is for the article itself.
+In the lower, bigger, textbox is for the article itself.
 
 By clicking on the "commit changes" button you're saving all changes and moving on to the fourth step.
 
@@ -67,7 +67,11 @@ Here you will get the comparation of the current state of that page and your cha
 
 This is the final step. Here you are leaving a message related to your changes.  When you click the green button your changes will be sent for review.
 
-Once you go through this process once you will be able to edit or create any page  without going through this entire process again.
+Once you go through this process once you will be able to edit or create any page without going through this entire process again.
+
+#### Editing already existing files
+
+Once you open a file in GitHub, there will be a small pen icon in the top right corner, pressing that button will allow you to edit that file.
 
 ## This  folder (`/en/`)<a name="folder"></a>
 
@@ -212,11 +216,11 @@ A source should (if possible) include:
 
 #### Examples:
 
-`<w-ref name="elections 2012"><w-a>"Izbori 2012: Rezultati i postizborna trgovina"|https://www.vreme.com/projekat/izbori-2012-rezultati-i-postizborna-trgovina/</w-a>. <i>Vreme</i>. 10. Maj 2012. Arhivirano 30. Juna 2022.</w-ref>`
+`<w-ref name="stanica"><i><w-a>Ko je radio rekonstrukciju zgrade Železničke stanice u Novom Sadu|https://n1info.rs/biznis/ko-je-radio-rekonstrukciju-zgrade-zeleznicke-stanice-u-novom-sadu/</w-a></i>, 1. Novembar 2024. N1 Beograd</w-ref>`
 
 If we want to use this same source with the same number again, we would just type:
 
-`<w-ref name="elections 2012"></w-ref>`
+`<w-ref name="stanica"></w-ref>`
 
 The `name` attribute is **NOT** required, it's just used to avoid typing the same thing again.
 
@@ -244,11 +248,14 @@ They're inserted with `<w-annotation>` tag and have three types: `none`, `warn` 
 
 `danger` has a red border and notifies other editors about urgent issues with the article. On Wikipedia it's used for pages that are due for deletion.
 
+Annotations can have the `image` attribute which is a link to an image used to the right of the annotation text. This is purely for aesthetics and is not mandatory. 
+
 #### Examples:
 
 `<w-annotation> Ovo je članak o Covid protestima 2020. godine, za ekološke proteste sličnog imena, pogledajte <w-a>Ekološki protesti 2020</w-a> </w-annotation>`
 
-`<w-annotation type="warn">Ovaj članak nema dovoljno izvora. Treba dodati još.</w-annotation>`
+`<w-annotation type="warn" image="https://upload.wikimedia.org/wikipedia/en/thumb/9/99/Question_book-new.svg/512px-Question_book-new.svg.png?20210726203442">Ovaj članak ne sadrži dovoljno <w-a>pouzdanih izvora|https://github.com/Graphite2213/SNSWiki-Pages/tree/master/rs#izvori</w-a>. Doprinesite ovoj stranici tako što ćete dodati još. Sve nepodržane tvrdnje mogu biti uklonjene.</w-annotation>
+`
 
 The code above would result in the following:
 
@@ -279,7 +286,7 @@ On SNSWiki, you would add an infobox like this:
 
 - `<wi-vs>` is an element used for representing two opposed sides.
 
-    It needs to include at least 2 `<wvs-side>` elements, which represent the sides. Those sides need to include `<wvs-p>` which represent the parties on each side.
+    It needs to include at least 2 `<wvs-side>` elements, which represent the sides. Those sides need to include at least one `<wvs-p>` which represents the parties on each side.
 
     Those parties can be text, links or lists. If the party is a list, the `<wvs-p>` element can include the `list` and `collapsed` attributes. The `list` attribute is the title of the list, and the `collapsed` attribute determines if the list is collapsable.
 
@@ -288,70 +295,49 @@ On SNSWiki, you would add an infobox like this:
 Here's a complete infobox example:
 
 ```
-<w-infobox title="2023 Serbian protests">
-    <wi-image>protest.jpg|Demonstrators on 19 May 2023</wi-image>
-                    
-    <wi-header>Info</wi-header>
-    <wi-row>Date|8 May – 4 November 2023</wi-row>
-    <wi-row>Location|Serbia</wi-row>
-    <wi-row>Caused by|<ul>
-      <li>A school shooting and a mass murder on 3 and 4 May</li>
+<w-infobox title="Pad Nadstrešnice u Novom Sadu">
+    <wi-image>Slika urušene nadstrešnice|https://www.alo.rs/data/images/2024-11-01/969788_img-20241101-wa0013_f.jpg</wi-image>
+    <wi-header>Informacije</wi-header>
+    <wi-row>Datum|1. novembar 2024</wi-row>
+    <wi-row>Vreme|11:52 (CET)</wi-row>
+    <wi-row>Lokacija|<w-a>Glavna železnička stanica|https://sr.wikipedia.org/wiki/Железничка_станица_Нови_Сад</w-a>, <w-a>Novi Sad|https://sr.wikipedia.org/wiki/Нови_Сад</w-a></wi-row>
+    <wi-row>Preminulih|13</wi-row>
+    <wi-row>Povređenih|2</wi-row>
+    <wi-row>Odgovorni|<ul>
+        <li><w-a>Goran Vesić</w-a>, Ministar građevinarstva</li>
+        <li><w-a>Jelena Tanasković</w-a>, Direktor "Infrastruktura železnica Srbije"</li>
+        <li>Anita Dimoski, Pomoćnica ministra za železnički saobraćaj</li>
+        <li>Nebojša Šurlan, Bivši direktor "Infrastruktura železnica Srbije"</li>
+        <li>Drugih devet izvršitelja radova. Imena nepoznata.</li>
     </ul></wi-row>
-    <wi-row>Goals|<ul>
-      <li>Resignation of Branko Ružić, Bratislav Gašić and Aleksandar Vulin</li>
-      <li>Resignations of the body members of the Regulatory Body for Electronic Media and Radio Television of Serbia</li>
-      <li>Withdrawal of the national broadcasting licences of RTV Pink and Happy TV</li>
-    </ul></wi-row>
-    <wi-row>Methods|Demonstrations • civil roadblocks • civil resistance</wi-row>
-    <wi-row>Concessions|<ul>
-      <li>Resignation of education minister Branko Ružić</li>
-    </ul></wi-row>
-    <wi-header>Parties</wi-header>
+    <wi-row>Optužbe|„Nepropisno izvođenje građevinskih radova“ i „Izazivanje opšte opasnosti“</wi-row>
+    <wi-row>Presude|<i>Suđenje u toku</i></wi-row>
+    <wi-header>Protesti</wi-header>
     <wi-vs>
         <wvs-side>
-            <wvs-p list="Anti-government protesters">
+            <wvs-p list="Građanske grupe">
                 <ul>
-                    <li>Citizens</li>
-                    <li>Farmers (16-20 May)</li>
+                    <li>Građani</li>
+                    <li>Grupa „SviĆe“</li>
+                    <li>Grupa „Stav“</li>
+                    <li>Grupa „Bravo“</li>
                 </ul>
             </wvs-p>
-            <wvs-p list="Opposition parties" collapsed="true">
+            <wvs-p list="Opozicione stranke">
                 <ul>
-                    <li>Do not let Belgrade drown/Green–Left Front</li>
-                    <li>Democratic Party</li>
-                    <li>People's Party</li>
-                    <li>Party of Freedom and Justice</li>
-                    <li>Movement of Free Citizens</li>
-                    <li>Together</li>
+                    <li>Zeleno-levi Front</li>
+                    <li>Demokratska Stranka</li>
                 </ul>
             </wvs-p>
         </wvs-side>
         
         <wvs-side>
-            <wvs-p list="Government of Serbia">
+            <wvs-p list="Vlada Srbije">
                 <ul>
-                    <li>Police</li>
+                    <li>Policija</li>
+                    <li>Žandarmerija</li>
                 </ul>
             </wvs-p>
-            <wvs-p list="Government Parties">
-                <ul>
-                    <li>Serbian Progressive Party</li>
-                    <li>Socialist Party of Serbia</li>
-                </ul>
-            </wvs-p>
-        </wvs-side>
-    </wi-vs>
-    <wi-header>Lead Figures</wi-header>
-    <wi-vs>
-        <wvs-side>
-            <wvs-p><i>No centralised leadership</i></wvs-p>
-        </wvs-side>
-
-        <wvs-side>
-            <wvs-p>Aleksandar Vučić</wvs-p>
-            <wvs-p>Ana Brnabić</wvs-p>
-            <wvs-p>Aleksandar Vulin</wvs-p>
-            <wvs-p>Bratislav Gašić</wvs-p>
         </wvs-side>
     </wi-vs>
 </w-infobox>
