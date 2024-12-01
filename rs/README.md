@@ -67,7 +67,6 @@ Ovde bi `covid protesti 2020.html` bila stranica koja se pojavljuje na sajtu pod
 
 U suštini, jedino što je potrebno da sajt funkcioniše je sam folder i `.html` fajl unutar njega.
 
-
 ### Kako zapravo napraviti novu stranicu
 
 Kako sam ja zamislio da se koristi ovaj sajt je:
@@ -95,7 +94,7 @@ Ovo u osnovi znači da morate da napravite kopiju SNSWikije na svom nalogu, odav
 
 ![Treci korak](../images/gh_step3.png)
 
-Ovde unosite ime fajla i njegov sadržaj. U gornjem textbox-u morate da unesete **naziv foldera**, i onda da upišete naziv fajla. Na primer, za članak s imenom "Primer", u gornji textbox bi ste napisali `Primer/primer.html`. Tako se kreira i folder i fajl za stranicu koju pravite. Ja sam to već uradio u ovoj slici.
+Ovde unosite ime fajla i njegov sadržaj. U gornjem textbox-u morate da unesete **naziv foldera**, i onda da upišete naziv fajla, razdvojeno s `/`. Na primer, za članak s imenom "Primer", u gornji textbox bi ste napisali `Primer/primer.html`. Tako se kreira i folder i fajl za stranicu koju pravite. Ja sam to već uradio u ovoj slici.
 
 U donjem, velikom textbox-u, se unosi članak koji ste predhodno napisali.
 
@@ -119,7 +118,7 @@ Ukoliko fajl već postoji, kad ga locirate i otvorite u GitHub-u pojaviće se ma
 
 ### `rs-meta.json` fajl 
 
-Ovaj fajl sadrži generalne meta-podatke za srpsku stranu sajta. Osim stranica (`pages` niz koji **ne treba dirati ručno**) koje sam repozitorijum prati i dodaje, takođe postoji i `featured` koji sadrži stranice koje se nalaze u "sidebar"-u sajta.
+Ovaj fajl sadrži generalne meta-podatke za srpsku stranu sajta. Osim stranica (`pages` niz koji **ne treba dirati ručno**) koje sam repozitorijum prati i dodaje, takođe postoje i `featured` i `news` nizovi koji sadrže stranice koje se nalaze na početnoj strani sajta.
 
 ### `placeholder.html` fajl
 
@@ -146,14 +145,14 @@ Jezik koji koristi ovaj wiki je, kao i sve ostalo, napravljen namenski od strane
 Za sve koji nisu upoznati sa HTML-om, evo ga jedan "crash course":
 
 - Skoro svaki tag koji se otvori mora i da se zatvori koristeći taj isti tag sa `/` karakterom: `<tag></tag>`
-- HTML ignoriše nove linije i više od jednog razmaka (Kad bi napisali "<pre>abcdef      ghi</pre>", samo bi se pojavilo "abcdef ghi").
+- HTML ignoriše nove linije i više od jednog razmaka (Kad bi napisali "`abcdef      ghi`", samo bi se pojavilo "abcdef ghi").
 
 Neki osnovni tagovi su:
 
 - `<p></p>`, tekst unutar ovog taga se računa kao paragraf i odvojen je od ostatka teksta sa praznim linijama. Sve celine u tekstu bi trebale da budu paragrafi.
 - `<b></b>`, je **bold**.
 - `<i></i>`, je *italic*.
-- `<br>` nema svoj zatvarajući tag i predstavlja praynu liniju u tekstu.
+- `<br>` nema svoj zatvarajući tag i predstavlja praznu liniju u tekstu.
 - `<ul></ul> i <ol></ol>` su liste, one su malo komplikovanije i možete naći više informacija o njima [ovde](https://www.w3schools.com/html/html_lists.asp).
 
 ### Osnovno formatiranje
@@ -223,11 +222,11 @@ Izvor (po mogućnosti) treba da sadrži:
 
 #### Primer:
 
-`<w-ref name="izbori 2012"><w-a>https://www.vreme.com/projekat/izbori-2012-rezultati-i-postizborna-trgovina/|"Izbori 2012: Rezultati i postizborna trgovina"</w-a>. <i>Vreme</i>. 10. Maj 2012. Arhivirano 30. Juna 2022.</w-ref>`
+`<w-ref name="stanica"><i><w-a>Ko je radio rekonstrukciju zgrade Železničke stanice u Novom Sadu|https://n1info.rs/biznis/ko-je-radio-rekonstrukciju-zgrade-zeleznicke-stanice-u-novom-sadu/</w-a></i>, 1. Novembar 2024. N1 Beograd</w-ref>`
 
 Ako bi hteli opet da stavimo isti ovaj izvor sa istim brojem u jednom članku, samo bi napisali:
 
-`<w-ref name="izbori 2012"></w-ref>`
+`<w-ref name="stanica"></w-ref>`
 
 `name` atribut **NIJE** obavezan, samo se koristi za ponovno korišćenje istog izvora.
 
@@ -253,11 +252,17 @@ Oni se ubacuju u stranicu sa `<w-annotation>` tagom i imaju tri vrste: `none`, `
 
 `danger` ima crvenu marginu i obaveštava o stvarima koje hitno moraju da se promene na stranici. Na Wikipediji on bi se koristio da obavesti druge urednike da je članak neadekvatan za sajt i da ga treba obrisati.
 
-#### Primer:
+Atribut `image` dodaje malu sličicu na levu stranu anotacije. Ovo je čisto radi estetike i nije obavezno.
+
+#### Primeri:
 
 `<w-annotation> Ovo je članak o Covid protestima 2020. godine, za ekološke proteste sličnog imena, pogledajte <w-a>Ekološki protesti 2020</w-a></w-annotation>`
 
-`<w-annotation type="warn">Ovaj članak nema dovoljno izvora. Treba dodati još.</w-annotation>`
+```
+<w-annotation type="warn" image="https://upload.wikimedia.org/wikipedia/en/thumb/9/99/Question_book-new.svg/512px-Question_book-new.svg.png?20210726203442">
+Ovaj članak ne sadrži dovoljno <w-a>pouzdanih izvora|https://github.com/Graphite2213/SNSWiki-Pages/tree/master/rs#izvori</w-a>. Doprinesite ovoj stranici tako što ćete dodati još. Sve nepodržane tvrdnje mogu biti uklonjene.
+</w-annotation>
+```
 
 Formatiranje iznad bi napravilo ovakve anotacije: 
 
@@ -288,84 +293,63 @@ Na mom sajtu se infoboksevi dodaju u sledećoj formi:
 
 - `<wi-vs>` je element koji služi za prikazivanje dve suprotstavljene strane.
 
-    On u sebi mora da sadrži bar 2 `<wvs-side>` dela, koji predstavljaju suprotstavljene strane, i te strane moraju sadržati svoje partije koje su predstavljene `<wvs-p>` elementom.
+    On u sebi mora da sadrži bar 2 `<wvs-side>` dela, koji predstavljaju te suprotstavljene strane, i te strane moraju sadržati svoje partije koje su predstavljene `<wvs-p>` elementom.
 
-    Same partije mogu biti običan tekst, linkovi ili liste. Ako je partija lista u `<wvs-p>` element je moguće staviti dva opciona atributa, `list` i `collapsed`, gde `list` označava boldovani naslov liste, a `collapsed` označava da li je ta lista "kolapsovana" (sakrivena).
+    Same partije mogu biti običan tekst, linkovi ili liste. Ako je lista u pitanju, u `<wvs-p>` element je moguće staviti dva opciona atributa, `list` i `collapsed`, gde `list` označava boldovani naslov liste, a `collapsed` označava da li je ta lista "kolapsovana" (sakrivena).
 
 #### Primer:
 
-Ovo je jedan kompletan infoboks, tekst je na engleskom jer je preuzet sa Wikipedija stranice za proteste "Srbije Protiv Nasilja":
+Ovo je jedan kompletan infoboks:
 
 ```
-<w-infobox title="2023 Serbian protests">
-    <wi-image>protest.jpg|Demonstrators on 19 May 2023</wi-image>
-                    
-    <wi-header>Info</wi-header>
-    <wi-row>Date|8 May – 4 November 2023</wi-row>
-    <wi-row>Location|Serbia</wi-row>
-    <wi-row>Caused by|<ul>
-      <li>A school shooting and a mass murder on 3 and 4 May</li>
+<w-infobox title="Pad Nadstrešnice u Novom Sadu">
+    <wi-image>Slika urušene nadstrešnice|https://www.alo.rs/data/images/2024-11-01/969788_img-20241101-wa0013_f.jpg</wi-image>
+    <wi-header>Informacije</wi-header>
+    <wi-row>Datum|1. novembar 2024</wi-row>
+    <wi-row>Vreme|11:52 (CET)</wi-row>
+    <wi-row>Lokacija|<w-a>Glavna železnička stanica|https://sr.wikipedia.org/wiki/Железничка_станица_Нови_Сад</w-a>, <w-a>Novi Sad|https://sr.wikipedia.org/wiki/Нови_Сад</w-a></wi-row>
+    <wi-row>Preminulih|13</wi-row>
+    <wi-row>Povređenih|2</wi-row>
+    <wi-row>Odgovorni|<ul>
+        <li><w-a>Goran Vesić</w-a>, Ministar građevinarstva</li>
+        <li><w-a>Jelena Tanasković</w-a>, Direktor "Infrastruktura železnica Srbije"</li>
+        <li>Anita Dimoski, Pomoćnica ministra za železnički saobraćaj</li>
+        <li>Nebojša Šurlan, Bivši direktor "Infrastruktura železnica Srbije"</li>
+        <li>Drugih devet izvršitelja radova. Imena nepoznata.</li>
     </ul></wi-row>
-    <wi-row>Goals|<ul>
-      <li>Resignation of Branko Ružić, Bratislav Gašić and Aleksandar Vulin</li>
-      <li>Resignations of the body members of the Regulatory Body for Electronic Media and Radio Television of Serbia</li>
-      <li>Withdrawal of the national broadcasting licences of RTV Pink and Happy TV</li>
-    </ul></wi-row>
-    <wi-row>Methods|Demonstrations • civil roadblocks • civil resistance</wi-row>
-    <wi-row>Concessions|<ul>
-      <li>Resignation of education minister Branko Ružić</li>
-    </ul></wi-row>
-    <wi-header>Parties</wi-header>
+    <wi-row>Optužbe|„Nepropisno izvođenje građevinskih radova“ i „Izazivanje opšte opasnosti“</wi-row>
+    <wi-row>Presude|<i>Suđenje u toku</i></wi-row>
+    <wi-header>Protesti</wi-header>
     <wi-vs>
         <wvs-side>
-            <wvs-p list="Anti-government protesters">
+            <wvs-p list="Građanske grupe">
                 <ul>
-                    <li>Citizens</li>
-                    <li>Farmers (16-20 May)</li>
+                    <li>Građani</li>
+                    <li>Grupa „SviĆe“</li>
+                    <li>Grupa „Stav“</li>
+                    <li>Grupa „Bravo“</li>
                 </ul>
             </wvs-p>
-            <wvs-p list="Opposition parties" collapsed="true">
+            <wvs-p list="Opozicione stranke">
                 <ul>
-                    <li>Do not let Belgrade drown/Green–Left Front</li>
-                    <li>Democratic Party</li>
-                    <li>People's Party</li>
-                    <li>Party of Freedom and Justice</li>
-                    <li>Movement of Free Citizens</li>
-                    <li>Together</li>
+                    <li>Zeleno-levi Front</li>
+                    <li>Demokratska Stranka</li>
                 </ul>
             </wvs-p>
         </wvs-side>
         
         <wvs-side>
-            <wvs-p list="Government of Serbia">
+            <wvs-p list="Vlada Srbije">
                 <ul>
-                    <li>Police</li>
+                    <li>Policija</li>
+                    <li>Žandarmerija</li>
                 </ul>
             </wvs-p>
-            <wvs-p list="Government Parties">
-                <ul>
-                    <li>Serbian Progressive Party</li>
-                    <li>Socialist Party of Serbia</li>
-                </ul>
-            </wvs-p>
-        </wvs-side>
-    </wi-vs>
-    <wi-header>Lead Figures</wi-header>
-    <wi-vs>
-        <wvs-side>
-            <wvs-p><i>No centralised leadership</i></wvs-p>
-        </wvs-side>
-
-        <wvs-side>
-            <wvs-p>Aleksandar Vučić</wvs-p>
-            <wvs-p>Ana Brnabić</wvs-p>
-            <wvs-p>Aleksandar Vulin</wvs-p>
-            <wvs-p>Bratislav Gašić</wvs-p>
         </wvs-side>
     </wi-vs>
 </w-infobox>
 ```
 
-Ovaj kod nam daje sledeći infobox:
+Ovaj kod se prikazuje ovako u članku:
 
 ![Infobox Primer](../images/infoboxEx.png)
