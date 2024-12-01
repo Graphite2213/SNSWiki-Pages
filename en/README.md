@@ -16,7 +16,7 @@
 
 - For discussing a specific tab use the "discussions" tab on GitHub, and for any other site-related suggestions use the "issues" tab.
 
-- Stay civilized, vandalism and botting aren't allowed.
+- Stay civil, vandalism and botting aren't allowed.
 
 - All large claims made need to be backed by a [source](#izvori).
 
