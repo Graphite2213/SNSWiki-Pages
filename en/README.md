@@ -10,7 +10,7 @@
 5. [Page folder structure](#struktura)
 6. [Formatting](#formatiranje)
 
-## Editing Rules<a name="pravila"></a>
+## Editing Guidelines<a name="pravila"></a>
 
 - Use reliable sources, referencing government-influenced tabloids should be avoided.
 
