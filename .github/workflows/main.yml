@@ -1,0 +1,48 @@
+name: snswiki-update
+run-name: "Updating site metadata"
+on: 
+  push:
+    paths:
+      - en/**
+      - rs/**
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository content
+        uses: actions/checkout@v4 # Checkout the repository content to github runner.
+        
+      - name: Sleep for 15 seconds
+        run: sleep 15s
+        shell: bash
+   
+      - name: Setup Python Version
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.8 # Install the python version needed
+
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip requests
+          python -m pip install numpy
+          python -m pip install json5
+
+      - name: Execute Python script # Run the run.py to get the latest data
+        id: execute_python
+        run: python main.py
+
+      - name: Stage edited files
+        run: git stage .
+
+      - name: Commit edited files
+        continue-on-error: true
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m "${{join(steps.execute_python.outputs.msg, '\n')}}"
+
+      - name: Push back files
+        continue-on-error: true
+        run: git push origin
