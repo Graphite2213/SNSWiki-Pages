@@ -8,11 +8,17 @@ on:
       - en/*/Images/*.png
       - en/*/Images/*.svg
       - en/*/Images/*.webp
+      - en/placeholder.html
+      - en/README.md
+      - en/en-meta.json
       - rs/*/*
       - rs/*/Images/*.jpe?g
       - rs/*/Images/*.png
       - rs/*/Images/*.svg
       - rs/*/Images/*.webp
+      - rs/placeholder.html
+      - rs/README.md
+      - rs/rs-meta.json
     types:
       - labeled
       - unlabeled
