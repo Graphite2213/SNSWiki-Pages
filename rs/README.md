@@ -1,14 +1,24 @@
 # Dobrodošli na Srpski SNSWiki!
 
-Neću dužiti sa nekim mojim govorom o tome kako i zašto sam napravio ovo, za to pogledajte glavnu stranicu same SNSWikije. Ovaj README je većinom o tome kako zapravo urediti nešto na wikiji.
-
 ## Sadržaj
 
-1. [Kako sajt funkcioniše](#funkcija)
-2. [Pravila uređivanja](#pravila)
+1. [Pravila uređivanja](#pravila)
+2. [Kako sajt funkcioniše](#funkcija)
 3. [Ovaj folder (`/rs/`)](#folder)
 4. [Uputstvo za korišćenje editora](#editor)
 5. [Formatiranje / Sintaksa](#formatiranje)
+
+## Generalna pravila uređivanja <a name="pravila"></a>
+
+- Držite se pouzdanih izvora, tabloide koji su privržni vlasti treba ređe koristiti.
+
+- Za diskusiju oko neke specifične stranice koristite "discussions" tab, a ako želite da predložite nešto u vezi samog sajta (formatiranje, layout) koristite "issues" tab.
+
+- Ostanite civilizovani, botovanje i vandalizam nisu dozvoljeni.
+
+- Svaka velika tvrdnja na stranici mora biti podržana sa odgovarajućim [izvorom](#izvori).
+
+- U `Images` foldere samo stavljate slike koje su free-use, copyright free i slično. Ako koristite nešto što je zaštićeno autorskim pravima prvo dobijte dozvolu od autora. Nepoštovanje ovoga može rezultirati u brisanju celog repozitorijuma od strane GitHub moderatora.
 
 ## Kako sajt funkcioniše / Kako doprineti <a name="funkcija"></a>
 
@@ -104,18 +114,6 @@ Pošto jednom prođete ove korake moćićete da menjate/stvarate bilo koju stran
 ### Uređivanje već postojećih članaka
 
 Ukoliko fajl već postoji, kad ga locirate i otvorite u GitHub-u pojaviće se mala ikonica olovke. Kad nju kliknete moćićete da menjate taj fajl.
-
-## Generalna pravila uređivanja <a name="pravila"></a>
-
-- Držite se pouzdanih izvora, tabloide koji su privržni vlasti treba ređe koristiti.
-
-- Za diskusiju oko neke specifične stranice koristite "discussions" tab, a ako želite da predložite nešto u vezi samog sajta (formatiranje, layout) koristite "issues" tab.
-
-- Ostanite civilizovani, botovanje i vandalizam nisu dozvoljeni.
-
-- Svaka velika tvrdnja na stranici mora biti podržana sa odgovarajućim [izvorom](#izvori).
-
-- U `Images` foldere samo stavljate slike koje su free-use, copyright free i slično. Ako koristite nešto što je zaštićeno autorskim pravima prvo dobijte dozvolu od autora. Nepoštovanje ovoga može rezultirati u brisanju celog repozitorijuma od strane GitHub moderatora.
 
 ## Ovaj folder (`/rs/`) <a name="folder"></a>
 
