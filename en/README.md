@@ -3,12 +3,24 @@
 **⚠️ All examples with images in this guide are in Serbian. Sorry!**
 ## Contents
 
-1. [How to contribute](#funkcija)
-2. [Editing guidelines](#pravila)
+1. [Editing guidelines](#pravila)
+2. [How to contribute](#funkcija)
 3. [This folder (`/en/`)](#folder)
 4. [Editor use guide](#editor)
 5. [Page folder structure](#struktura)
 6. [Formatting](#formatiranje)
+
+## Editing Rules<a name="pravila"></a>
+
+- Use reliable sources, referencing government-influenced tabloids should be avoided.
+
+- For discussing a specific tab use the "discussions" tab on GitHub, and for any other site-related suggestions use the "issues" tab.
+
+- Stay civilized, vandalism and botting aren't allowed.
+
+- All large claims made need to be backed by a [source](#izvori).
+
+- All images added to the `Images` folder need to be copyright free/free use. If you add any images covered by copyright you need explicit permission from the author.
 
 ## How to contribute<a name="funkcija"></a>
 
@@ -56,18 +68,6 @@ Here you will get the comparation of the current state of that page and your cha
 This is the final step. Here you are leaving a message related to your changes.  When you click the green button your changes will be sent for review.
 
 Once you go through this process once you will be able to edit or create any page  without going through this entire process again.
-
-## Editing Rules<a name="pravila"></a>
-
-- Use reliable sources, referencing government-influenced tabloids should be avoided.
-
-- For discussing a specific tab use the "discussions" tab on GitHub, and for any other site-related suggestions use the "issues" tab.
-
-- Stay civilized, vandalism and botting aren't allowed.
-
-- All large claims made need to be backed by a [source](#izvori).
-
-- All images added to the `Images` folder need to be copyright free/free use. If you add any images covered by copyright you need explicit permission from the author.
 
 ## This  folder (`/en/`)<a name="folder"></a>
 
