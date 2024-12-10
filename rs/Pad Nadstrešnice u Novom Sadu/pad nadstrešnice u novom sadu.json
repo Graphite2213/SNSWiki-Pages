@@ -1,1 +1,9 @@
-{"protection":0,"description":"Tragedija izazvana padanjem nadstrešnice na železničkoj stanici u Novom Sadu.","image":"","keywords":["Novi Sad"],"link":"Novi Sad railway station canopy collapse"}
+{
+  "protection": 0,
+  "description": "Tragedija izazvana padom nadstrešnice na železničkoj stanici u Novom Sadu.",
+  "image": "protesti_ns.png",
+  "keywords": [
+    "Novi Sad"
+  ],
+  "link": "Novi Sad railway station canopy collapse"
+}
